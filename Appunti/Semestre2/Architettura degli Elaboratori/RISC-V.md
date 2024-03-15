@@ -68,12 +68,27 @@ Vi sono vari formati, cioè modi di interpretare le sequenze di comando:
 | imm. 1    | x9    | x22   | istruz. | imm.2 (24) | istruz. |
 
 ### Operazioni logiche
-// TODO
-<u>Shift logico dx</u>:
-<u>Shift logico sx</u>:
-<u>Shift aritmetico dx</u>:
+Nello shift vengono spostati tutti i bit di posizione.
+<u>Shift logico dx</u>: divisione per 2.
+<u>Shift logico sx</u>: moltiplicare per 2.
+<u>Shift aritmetico dx</u>: mantiene il bit di segno.
 
 <u>And</u>: operatore and bit a bit di due registri a 64 bit.
 <u>Or</u>: operatore or bit a bit di due registri a 64 bit.
 <u>Xor</u> operatore xor bit a bit di due registri a 64 bit.
 <u>Not</u>: (pseudoistruzione del compilatore) // TODO
+
+### Salti condizionali
+Normalmente, ad ogni esecuzione di un comando, viene aumentato il Program Counter di 4 byte, in modo da passare a quella successiva.
+Nei salti condizionali (`if`, `while`, `for`...) viene modificato il normale flusso del PC con un valore preciso.
+> `beq rs1, rs1, L1`:  se il valore dei registri `rs1` e `rs2` è uguale, PC viene modificato con il valore dell'etichetta `L1`.
+
+> `if-else`
+> ![[Pasted image 20240315114529.png]]
+> In questo esempio viene eseguito `sub` solo se è verificato il `bne`. Nel caso opposto, viene eseguito l'`add` e il salto incondizionato fuori dall'`if` (`beq x0, x0, ENDIF` viene sempre eseguito perché confronta 0 con 0. Salta quindi all'etichetta `ENDIF`).
+
+> `for`
+> ![[Pasted image 20240315121046.png]]
+> Il controllo del ciclo viene effettuato testando la negazione di `i<100`, se è verificata si salta giù all'`ENDFOR`. 
+> Al contrario, se la condizione del ciclo è ancora valida, il comando `beq` fa un salto condizionato ogni volta che viene conclusa l'esecuzione del corpo del ciclo.
+
