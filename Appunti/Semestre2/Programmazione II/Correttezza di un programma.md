@@ -23,3 +23,4 @@ Nei cicli, scrivere prima:
 2. Creo test per verificare la bontà della funzione.
 3. Penso ad una soluzione in "pseudo-codice".
 4. Scrivo la funzione.
+ 

@@ -51,6 +51,11 @@ Vi sono vari formati, cioè modi di interpretare le sequenze di comando:
 	`immediato[11:5]` e `immediato[4:0]` la costante, suddivisa in 2 perché si vuole mantenere la stessa posizione del formato R.
 	`funz3` codice operativo aggiuntivo (3 bit).
 	> `sd x9, 24(x22)` -> 0000000 01001 10110 011 11000 0100011
+- <u>Formato di tipo SB</u>: permette di eseguire i salti condizionati.
+	`codop` rappresenta il codice operativo di istruzione (7 bit)
+	`immediato` la costante
+	`funz3` codice operativo aggiuntivo (3 bit)
+	`rs1`, `rs2` registri sorgente
 
 | Formato R |       |       |     |       |                |
 | --------- | ----- | ----- | --- | ----- | -------------- |
@@ -91,4 +96,3 @@ Nei salti condizionali (`if`, `while`, `for`...) viene modificato il normale flu
 > ![[Pasted image 20240315121046.png]]
 > Il controllo del ciclo viene effettuato testando la negazione di `i<100`, se è verificata si salta giù all'`ENDFOR`. 
 > Al contrario, se la condizione del ciclo è ancora valida, il comando `beq` fa un salto condizionato ogni volta che viene conclusa l'esecuzione del corpo del ciclo.
-
