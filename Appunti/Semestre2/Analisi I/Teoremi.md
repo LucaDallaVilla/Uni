@@ -82,3 +82,22 @@ Sia $f:[a,b] \to R$ continua nell'intervallo chiuso e limitato. Allora esistono 
 
 <u>Osservazione</u>: In generale, $x_m$ e $x_M$ non sono unici, ma i minimi e massimi assoluti sì.
 ![[Pasted image 20240313121908.png]]
+
+### Th. Continuità-derivabilità
+Sia $f:I(c) \to R$. Se $f$ è derivabile in $x=c$, allora $f$ è continua in $c$.
+
+<u>Dimostrazione</u>: Dobbiamo dimostrare che $\lim\limits_{x \to c} f(x)=f(c)$. Ovvero che $\lim\limits_{x \to c} f(x)-f(c)=0$.
+$\forall x \neq c$   $f(x)-f(c)=\dfrac{f(x)-f(c)}{x-c}*(x-c)$. Essendo $f$ derivabile per ipotesi, $f'(c) \in R$. Quindi $\lim\limits_{x \to c} (f(x)-f(c))=f'(c)*0=0$.
+<u>Osservazione</u>: Il viceversa è falso. Una funzione continua in un punto, può non essere derivabile in quel punto. [[Limiti#Punti dove il limite non esiste]]
+
+### Th. di Lagrange
+Sia $f:[a,b] \to R$ continua in $[a,b]$ chiuso e limitato, e derivabile in $(a,b)$. Allora $\exists c \in (a,b)$ tale che $f'(c)=\dfrac{f(b)-f(a)}{b-a}$.
+![[Pasted image 20240319103734.png|800]]
+Questo teorema dice sostanzialmente che esiste almeno una retta tangente alla funzione all'interno dell'intervallo con la stessa pendenza della retta che passa per gli estremi dell'intervallo (AB).
+Nella interpretazione cinematica, quindi in un grafico spazio-tempo, il teorema ci dice che in almeno un punto di un percorso, il corpo ha avuto velocità pari a quella media.
+
+<u>Corollario</u>: Caratterizzazione di funzioni a derivata =0. Sia $f:(a,b) \to R$ derivabile. Allora $f'(x)=0$  $\forall x \in (a,b) \iff \exists k \in R$ tale che $f(x)=k$  $\forall x \in (a,b)$.
+<u>Corollario</u>: Caratterizzazione di funzione a derivata seconda =0. Sia $f:(a,b) \to R$ 2 volte derivabile. Allora $f''(x)=0$  $\forall x \in (a,b) \iff \exists m,q \in R$ tale che $f(x)=mx+q$.
+<u>Corollario</u>: Caratterizzazione di primitive di una $f$. Sia $f:(a,b) \to R$. Allora
+- $F$ è una primitiva di $f \Rightarrow F(x)+c$ è ancora una primitiva $\forall c \in R$
+- se $F_1$ e $F_2$ sono 2 primitive di $f$, allora $\exists c \in (a,b)$ tale che $F_1(x)-F_2(x)=c$    $\forall x \in (a,b)$.

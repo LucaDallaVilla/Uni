@@ -1,4 +1,4 @@
-### Tipi di dicontinuità
+### Tipi di discontinuità
 Sia $c \in R$ e sia $I(c)=(c-\delta, c+\delta)$ un suo intorno.
 <u>Definizione</u>: Una funzione $f:I(c) \to R$ si dice continua in $c$ se $\lim\limits_{x \to c} f(x)=f(c)$, cioè se $\forall \epsilon>0$ $\exists \delta >0 : |x-c|<\delta \Rightarrow|f(x)-f(c)|<\epsilon$.
 ![[Pasted image 20240313111457.png|800]]
