@@ -101,3 +101,59 @@ Nella interpretazione cinematica, quindi in un grafico spazio-tempo, il teorema 
 <u>Corollario</u>: Caratterizzazione di primitive di una $f$. Sia $f:(a,b) \to R$. Allora
 - $F$ è una primitiva di $f \Rightarrow F(x)+c$ è ancora una primitiva $\forall c \in R$
 - se $F_1$ e $F_2$ sono 2 primitive di $f$, allora $\exists c \in (a,b)$ tale che $F_1(x)-F_2(x)=c$    $\forall x \in (a,b)$.
+
+### Th. test di monotonia
+Sia $f:(a,b) \to R$ derivabile. Allora
+- $f$ è crescente su $(a,b) \iff f'(x) \geq 0$   $\forall x \in (a,b)$
+- $f$ è decrescente su $(a,b) \iff f'(x) \leq 0$    $\forall x \in (a,b)$
+<u>Osservazione</u>: è importante che $f$ sia definita su un intervallo.
+
+<u>Dimostrazione</u>: Dimostriamo il punto 1, in quanto le altre dimostrazioni sono analoghe.
+- $\Rightarrow$
+	Supponiamo che $f$ sia crescente su $(a,b)$:
+	$\forall x,z \in (a,b), x \neq z \Rightarrow \begin{cases} x<z \Rightarrow f(x) \leq f(z) \\ x>z \Rightarrow f(x) \geq f(z) \end{cases}$ 
+	Fissiamo $x \in (a,b)$ arbitrariamente, quindi consideriamo il quoziente di Newton: $\dfrac{f(z)-f(x)}{z-x}=\begin{cases} x<z \Rightarrow \dfrac{\geq 0}{>0}=\geq 0 \\ x>z \Rightarrow \dfrac{\leq 0}{<0}=\geq 0 \end{cases} \Rightarrow \geq 0$
+	$\forall z \in (a,b)$. Passiamo al limite $z \to x$: $f'(x)=\lim\limits_{z \to x} \dfrac{f(z)-f(x)}{z-x} \geq 0$ (cfr. [[Teoremi#Th. permanenza del segno (1)]])
+- $\Leftarrow$ 
+	Supponiamo $f'(x) \geq 0$  $\forall x \in (a,b)$
+	Vogliamo dimostrare che $\forall x_1, x_2 \in (a,b):x_1<x_2 \Rightarrow f(x_1) \leq f(x_2)$. Usiamo il [[Teoremi#Th. di Lagrange]] in $[a,b]$.
+	$\exists c \in (x_1, x_2)$ tale che $f'(c)=\dfrac{f(x_2)-f(x_1)}{x_2-x_1} \Rightarrow f(x_2)-f(x_1)=f'(c)(x_2-x_1) \geq 0$
+	cioè $f(x_2) \geq f(x_1)$.
+<u>Corollario</u>: Sia $f:(a,b) \to R$ 2 volte derivabile. Allora:
+- $f'$ è crescente su $(a,b) \iff f''(x) \geq 0$   $\forall x \in (a,b)$
+- $f'$ è decrescente su $(a,b) \iff f''(x) \leq 0$   $\forall x \in (a,b)$
+
+### Th. test di concavità
+Sia $f:(a,b) \to R$ derivabile. Allora:
+- $f$ è convessa su $(a,b) \iff f'$ è crescente su $(a,b)$.
+- $f$ è concava su $(a,b) \iff f'$ è decrescente su $(a,b)$.
+
+<u>Dimostrazione</u>: Dimostriamo il punto 1.
+- $\Rightarrow$
+	$f$ è convessa su $(a,b)$ per ipotesi. Vogliamo dimostrare che $\forall x_1, x_2 \in (a,b)$ con $x_1<x_2$: $f'(x_1) \leq f'(x_2)$
+	$f(x) \leq f(x_1)+\dfrac{f(x_2)-f(x_1)}{x_2-x_1}*(x-x_1)$   $\forall x \in [x_1, x_2]$
+	Consideriamo la funzione ausiliaria $g:[x_1,x_2] \to R$
+	$g(x)=f(x)-f(x_1)-\dfrac{f(x_2)-f(x_1)}{x_2-x_1} (x_2-x_1)$  (1)
+	Sappiamo che $g(x) \leq 0$  $\forall x \in [x_1, x_2]$ sempre perché $f$ è convessa.
+	Si può calcolare che $g(x_1)=0$ e $g(x_2)=0$.
+	Dimostriamo che $g'(x_1) \leq 0$ e $g'(x_2) \geq 0$  (2)
+	1. se $x>x_1 \Rightarrow \dfrac{g(x)-g(x_1)}{x-x_1} \leq 0$
+		$g'(x_1)=\lim\limits_{x \to x_1^+} \dfrac{g(x)-g(x_1)}{x-x_1} \leq 0$  per [[Teoremi#Th. permanenza del segno (1)]]
+	2. se $x<x_2 \Rightarrow \dfrac{g(x)-g(x_2)}{x-x_2}=\geq 0$ 
+		$g'(x_2)=\lim\limits_{x \to x_2^-} \dfrac{g(x)-g(x_2)}{x-x_2} \geq 0$ per [[Teoremi#Th. permanenza del segno (1)]]
+	$g'(x)=f'(x)-\dfrac{f(x_2)-f(x_1)}{x_2-x_1}$   $\forall x \in [x_1, x_2]$ (3)
+	(2) ci suggerisce che $f'(x_1) \leq \dfrac{f(x_2)-f(x_1)}{x_2-x_1}$ e $f'(x_2) \geq \dfrac{f(x_2)-f(x_1)}{x_2-x_1}$.
+	Quindi $f'(x_2) \geq \dfrac{f(x_2)-f(x_1)}{x_2-x_1} \geq f'(x_1)$.
+- $\Leftarrow$
+	Supponiamo che $f'$ sia crescente in $(a,b)$ e mostriamo che $f$ è convessa, cioè che $\forall x_1, x_2 \in (a,b)$, la funzione $g$ definita nella (1) sia tale che $g(x) \leq 0$   $\forall x \in [x_1, x_2]$. Ricordiamo che $g(x_1)=0 e g(x_2)=0$. 
+	Per la (3) $g'$ è crescente $\iff f'$ è crescente in quanto differiscono solo per una costante.
+	$\Rightarrow g'$ è crescente per ipotesi.
+	Per [[Teoremi#Th. di Lagrange]] $\exists c \in (x_1, x_2)$ tale che $g'(c)=\dfrac{g(x_2)-g(x-1)}{x_2-x_1}=0$.
+	Sappiamo dunque che la funzione è crescente, ma anche che si annulla per un punto $c$ intermedio a $[x_1, x_2]$.
+	![[Pasted image 20240320121843.png]]
+	Abbiamo che: $g'(x) \leq 0$   $\forall x \in [x_1, c]$ e $g'(x) \geq 0$   $\forall x\ \in [c, x_2]$
+	Quindi necessariamente $g(x) \leq 0$   $\forall x \in [x_1, x_2]$
+
+<u>Corollario</u>: $f:(a,b) \to R$ derivabile 2 volte. Allora:
+- $f$ è convessa su $(a,b) \iff f''(x) \geq 0$   $\forall x \in (a,b)$
+- $f$ è concava su $(a,b) \iff f''(x) \leq 0$   $\forall x \in (a,b)$

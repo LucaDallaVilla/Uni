@@ -39,7 +39,7 @@ $x^*$ ottimo con il minimo numero di variabili >0.
 		$u$ e $v$ sono anche loro soluzioni ottime.
 		$c^Tu<z^*$
 		$c^Tv<z^*$
-		$z^*=c^Tx^*=c^T[\dfrac{1}{2}u+\dfrac{1}{2}v]=\dfrac{1}{2}c^Tu+\dfrac{1}{2}c^Tv<z^* \Rightarrow z^* < z^*$ assurdo!
+		$z^*=c^Tx^*=c^T\left[\dfrac{1}{2}u+\dfrac{1}{2}v\right]=\dfrac{1}{2}c^Tu+\dfrac{1}{2}c^Tv<z^* \Rightarrow z^* < z^*$ assurdo!
 		$\Rightarrow u, v$ soluzioni ottime.
 		$y=u-v$
 		C'è almeno una $y_i<0$.
@@ -47,4 +47,6 @@ $x^*$ ottimo con il minimo numero di variabili >0.
 		$Ax'=b$ e $x' \geq 0$.
 		$Ax'=A(x^*+\epsilon y=Ax^*+\epsilon Ay=Ax^*+\epsilon Au-\epsilon Av=b+b-b=b$
 		$x'=x^*+\epsilon y \geq 0$
-		$x_i'=x_i^*+\epsilon y_i$ 
+		$x_i'=x_i^*+\epsilon y_i$
+
+ 
