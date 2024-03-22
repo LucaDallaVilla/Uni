@@ -18,3 +18,24 @@ $f(x) \sim f(c)+f'(c)(x-c)$
 > $f(x)=sinx$, $c=0$. $f'(0)=1 \Rightarrow sinx \sim f(0)+f'(0)x=x$
 > Vicino a zero, la funzione $sinx$ è simile alla retta.
 
+### Funzioni elementari
+
+| Funzione     | Derivata                   |
+| ------------ | -------------------------- |
+| $x^{\alpha}$ | $\alpha*x^{\alpha-1}$      |
+| $k$          | 0                          |
+| $e^x$        | $e^x$                      |
+| $log(x)$     | $\dfrac{1}{x}$             |
+| $sin(x)$     | $cos(x)$                   |
+| $cos(x)$     | $-sin(x)$                  |
+| $tan(x)$     | $\dfrac{1}{cos^2x}$        |
+| $arcsin(x)$  | $\dfrac{1}{\sqrt{1-x^2}}$  |
+| $arccos(x)$  | $-\dfrac{1}{\sqrt{1-x^2}}$ |
+| $arctan(x)$  | $\dfrac{1}{1+x^2}$         |
+### Regole di derivazione
+- Somma: $(f+g)'(x)=f'(x)+g'(x)$
+- Prodotto: $(\beta f)(x)=\beta (f'(x))$ 
+		  $(f*g)'(x)=f'(x)g(x)+f(x)g'(x)$
+- Rapporto: $\left(\dfrac{f}{g}\right)'(x)=\dfrac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}$
+- Funzione composta: $(g \circ f)(x)=g(f(x)$
+					$(g(f(x))'=g'(f(x))*f'(x)$
