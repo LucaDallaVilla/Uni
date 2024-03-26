@@ -157,3 +157,27 @@ Sia $f:(a,b) \to R$ derivabile. Allora:
 <u>Corollario</u>: $f:(a,b) \to R$ derivabile 2 volte. Allora:
 - $f$ è convessa su $(a,b) \iff f''(x) \geq 0$   $\forall x \in (a,b)$
 - $f$ è concava su $(a,b) \iff f''(x) \leq 0$   $\forall x \in (a,b)$
+
+### Th. Formula di Taylor con resto di Lagrange
+Sia $f:I(c) \to R$ di classe $C^{n+1}$ in $I(c)$.
+Allora $\forall x \in I(c)$ $\exists \alpha_x$ compreso tra $c$ e $x$ tale che $E_n(x)=\dfrac{f^{(n+1)}(\alpha x)}{(n+1)!} (x-c)^{n+1}$.
+$f(x)=T_{n,c}(x)+\dfrac{f^{(n+1)}(\alpha x)}{(n+1)!} (x-c)^{n+1}$.
+<u>Osservazione</u>: $\alpha_x$ non è noto a priori.
+<u>Osservazione</u>: $E_n(x)$ è più piccolo quanto più $n$ è grande per $x \to c$.
+
+> $|(x-c)^{n+1}| \leq |(x-c)^n|$   per $x \sim c$
+> $(n+1)! > n!$
+
+<u>Osservazione</u>: $n=0$    $f(x)=f(c)+f'(\alpha_c)(x-c)$ è esattamente il th. di Lagrange.
+<u>Osservazione</u>: Il th. ci dà una stima quantitativa dell'errore $E_n(x)=\dfrac{f^{(n+1)}(\alpha_x)}{(n+1)!} (x-c)^{n+1}$
+
+
+> Supponiamo di sapere che $0<e<3$. Vogliamo stimare $\sqrt{2}$ usando il polinomio di Mac Laurin di $e^x$ di ordine 3.
+> $T_{3,0}(x)=1+x+\dfrac{x^2}{2}+\dfrac{x^3}{6}$.
+> $\sqrt{e}=e^{\frac{1}{2}}$
+> $T_{3,0}(\frac{1}{2})=1,64583 ...$
+>Quanto è fedele l'approssimazione $\sqrt{e} \sim T_{3,0}(\frac{1}{2})$?
+>Il th. dice che $\left|E_3(\frac{1}{2})\right|=\left|\dfrac{f^{(4)}(\alpha x)}{4!}*\dfrac{1}{2}^4\right| leq \dfrac{M_3}{4!}*\dfrac{1}{16}$, dove $M_3=max \space t\in [0,\frac{1}{2}] e^t$ 
+>Effettivamente $E_3$ è piccolo! => $|\sqrt{e}-1.64583| \leq 0,00451 ...$
+>$|\sqrt{e}-1.64583|=0,00289 ... < 0.00451$
+
