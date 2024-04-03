@@ -20,4 +20,3 @@ L'accelerazione istantanea è: $\lim\limits_{\Delta t \to 0} \dfrac{v(t+\Delta t
 2. $s(5)=8$, $s(16)=-4 \Rightarrow \text{ massima distanza è per } t=5 \text{ e la distanza è } 8$.
 3. $v(0)=\dfrac{0+1-0}{1}=1$.
 4. La funzione è convessa in $[6,8]$ e per $[12, 13]$.
-5. 

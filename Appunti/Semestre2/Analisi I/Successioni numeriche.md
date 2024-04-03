@@ -6,7 +6,6 @@ $n \to a_n$
 > $n \to \frac{1}{n}$
 
 <u>Notazione</u>: $\{a_n\}_n$ oppure $\{a_n\}$.
-
 ### Possibili applicazioni
 - Riproduzione cellulare
 	$n$ generazione -> $a_n$= numero di cellule in vita all'n-esima generazione.
@@ -14,7 +13,6 @@ $n \to a_n$
 	$n$ dimensione dell'array dove compiere le operazioni, $O(n)$ il numero di operazioni da compiere.
 - Integrale di Riemann
 	$S_n(f;z_1, ..., z_n)=\dfrac{b-a}{n} \sum\limits_{k=1}^{n}f(z_k)$
-
 ### Definizioni
 Tipicamente ci sono 2 modi di assegnare una successione:
 1. <u>Formula esplicita</u>: $a_n=\dfrac{1}{n}$
@@ -82,7 +80,33 @@ Infatti, se i limiti risultano essere
 - $+\infty=a_n$ è più grande.
 - $l \in (0, +\infty)=$ entrambe le successioni crescono con velocità analoga.
 
-### Gerarchia degli infiniti
-1. $\lim\limits_{n \to \infty} \dfrac{log_2 n}{n^x}=0$ perché i logaritmi tendono a infinito più lentamente delle potenze.
-2. $\lim\limits_{n \to \infty} \dfrac{n^k}{n^j}=0$   $\forall j>k>0$
-3. $\lim\limits_{n \to \infty} \dfrac{n^j}{q^n}=0$   $\forall j>0$, $\forall q>1$
+### Simboli di Landau
+<u>Definizione</u>: $\{a_n\}$. Diciamo che una proprietà vale definitivamente per $a_n$ se la proprietà è vera $\forall n \geq n_0$, cioè è vera da un certo indice in poi.
+<u>Definizione</u>: $\{a_n\}$ e $\{b_n\}$ successioni tali che $b_n \neq 0$ definitivamente. Diciamo che:
+- $\{a_n\}$ è o-piccolo di $\{b_n\}$, $a_n=0(b_n)$ se $\lim\limits_{n \to \infty} \dfrac{a_n}{b_n}=0$.
+- $\{a_n\}$ è o-grande di $\{b_n\}, a_n=O(b_n)$, se $\exists c>0$ tale che $\left|\dfrac{a_n}{b_n}\right| \leq c$  definitivamente per $n \to \infty$
+- $\{a_n\}$ è theta-grande di $\{b_n\}$, a_n=$\theta (b_n)$ se $\exists c, C>0$ tali che $c \leq \left|\dfrac{a_n}{b_n}\right| \leq C$ definitivamente per $n \to \infty$
+- $\{a_n\}$ è equivalente a $\{b_n\}$, $a_n \sim b_n$ se $\lim\limits_{n \to \infty} \dfrac{a_n}{b_n}=1$
+
+<u>Osservazione</u>:
+1. $a_n=o(b_n)$ vuol dire che $\{a_n\}$ cresce più lentamente di $\{b_n\}$. Quindi ad esempio:
+	$\log_{a}n=o(n^k)$   $\forall a>1$ e $k>0$
+	$n^k=o(n^j)$   $\forall 0<k<j$
+	$n^j=o(q^n)$   $\forall j>0, q>1$
+	$\lim\limits_{n \to \infty} \dfrac{a_n}{b_n}=+\infty \iff b_n=o(a_n)$
+
+2. ...
+
+	$\lim\limits_{n \to \infty} \left|\dfrac{a_n}{b_n}\right|=l$ esiste, allora $a_n=O(b_n)$ equivale a dire che $l\in [0, +\infty)$.
+
+3. $a_n=\theta (b_n)$ vuol dire che $\{a_n\}$ cresce non più lentamente e non più velocemente di $\{b_n\}$. Quindi $a_n=\theta(b_n) \iff \begin{cases} a_n=O(b_n) \\ a_n \text{ non è } o(b_n) \end{cases}$
+4. Se $\exists l=\lim\limits_{n \to \infty} \left| \dfrac{a_n}{b_n} \right|$, allora $a_n=\theta(b_n) \iff l \in (0, +\infty)$. Quindi $\{a_n\}$ e $\{b_n\}$ crescono con la stessa velocità.
+5. $a_n \sim b_n$ vuol dire che non solo le due successioni crescono con la stessa velocità ma "sono sempre più simili".
+	$a_n \sim b_n \Rightarrow a_n=\theta(b_n)$
+
+In generale, $P(n)=a_0 n^k+a_1n^{k-1}+...+a_{k-1}n+a_k$  con $k \in N, k \geq 1, a_0, a_1, a_2,...,a_k \in R, a_0 \neq 0$
+Allora, $P(n) \sim a_0n^k$
+Infatti $\dfrac{P(n)}{a_0n^k}=\dfrac{a_0n^k(1+\dfrac{a_1n^{k-1}}{a_0n^k}+...+\dfrac{a_{k-1}n}{a_0n^{k-1}}+\dfrac{a_k}{a_0n^k}}{a_0n^k}=\dfrac{1+0}{1}=1$ per $n \to \infty$.
+In conclusione, nello studio asintotico dei polinomi basta studiare i membri con grado massimo.
+<u>Osservazione</u>: I simboli di Landau si possono introdurre anche per le funzioni $f,g:[a,+\infty) \to R$, con $g(x) \neq 0$ definitivamente per $x \to \infty$.
+$f=0(g)$ se $\lim\limits_{x \to +\infty} \dfrac{f(x)}{g(x)}=0$.

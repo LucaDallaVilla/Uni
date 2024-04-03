@@ -97,4 +97,3 @@ $\sum\limits_{j=1}^{n} x_{ij}=1$   $\forall j=1,2,...,n$
 
 $y_i \geq \text{tempo di completamento} - \text{due date del j-esimo job}$
 $y_i \geq (\sum\limits_{k=1}^{j} \sum\limits_{i=1}^{n} p_i*x_{ik})-\sum\limits_{i=1}^{n} d_i*x_{ij}$    $\forall j=1,2,...,n$ 
-

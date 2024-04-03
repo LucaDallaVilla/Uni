@@ -167,3 +167,8 @@ Sono una serie di limiti che danno luogo a delle forme indeterminate. Si possono
 <u>Osservazioni</u>: In tutti i punti, eccetto il 2, abbiamo trovato la retta tangente alle funzioni.
 Abbiamo quindi approssimato al 1° ordine (con potenze di grado 1).
 Nel punto 2, abbiamo invece un'approssimazione di grado 2.
+### Gerarchia degli infiniti
+1. $\lim\limits_{n \to \infty} \dfrac{log_2 n}{n^x}=0$ perché i logaritmi tendono a infinito più lentamente delle potenze.
+2. $\lim\limits_{n \to \infty} \dfrac{n^k}{n^j}=0$   $\forall j>k>0$
+3. $\lim\limits_{n \to \infty} \dfrac{n^j}{q^n}=0$   $\forall j>0$, $\forall q>1$
+
