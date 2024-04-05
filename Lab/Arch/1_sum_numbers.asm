@@ -2,6 +2,7 @@
 .globl _start
 
 .text
+
 _start:
     addi x5, x0, 41     # load the numbers nei registri
     addi x6, x0, 43

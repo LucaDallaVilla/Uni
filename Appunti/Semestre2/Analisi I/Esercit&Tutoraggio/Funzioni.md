@@ -1,0 +1,4 @@
+### Discontinuità
+- Salto
+- Eliminabile
+- Infiniti
