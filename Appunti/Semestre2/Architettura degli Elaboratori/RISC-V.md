@@ -97,3 +97,5 @@ Nei salti condizionali (`if`, `while`, `for`...) viene modificato il normale flu
 > Il controllo del ciclo viene effettuato testando la negazione di `i<100`, se è verificata si salta giù all'`ENDFOR`. 
 > Al contrario, se la condizione del ciclo è ancora valida, il comando `beq` fa un salto condizionato ogni volta che viene conclusa l'esecuzione del corpo del ciclo.
 
+Quando chiami più di 1 funzione, fai attenzione a non sovrascrivere i registri.
+Non copiare incollare prologo e epilogo delle funzioni.
