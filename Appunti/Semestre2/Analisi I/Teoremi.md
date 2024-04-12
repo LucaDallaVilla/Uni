@@ -181,3 +181,60 @@ $f(x)=T_{n,c}(x)+\dfrac{f^{(n+1)}(\alpha x)}{(n+1)!} (x-c)^{n+1}$.
 >Effettivamente $E_3$ è piccolo! => $|\sqrt{e}-1.64583| \leq 0,00451 ...$
 >$|\sqrt{e}-1.64583|=0,00289 ... < 0.00451$
 
+
+### Th. punto fisso di una successione
+Sia $g:R \to R$ continua e sia $\{x_n\}$ una soluzione di (SD). Se $\exists\lim\limits_{n \to +\infty} x_n=l \in R$, allora $l$ è punto fisso di $g$.
+<u>Dimostrazione</u>: Sappiamo che $\exists l=\lim\limits_{n \to \infty} x_n$. Ma allora $\lim\limits_{n \to \infty} x_{n+1}=l$ per la proprietà di base delle successioni.
+$x_{n+1}=g(x_n) \Rightarrow \lim\limits_{n \to \infty} g(x_n)=l$. (1)
+Ora, $g$ è continua: $\lim\limits_{x \to c} g(x)=g(c)$
+$\lim\limits_{n \to \infty} x_n=l \Rightarrow \lim\limits_{n \to \infty} g(x_n)=g(\lim\limits_{n \to \infty x_n})=g(l) (2)$
+Confrontando le equazioni (1) e (2) risulta $l=g(l)$, cioè la definizione di punto fisso. $\square$
+<u>Osservazione</u>: Questo teorema dice che un sistema dinamico può convergere soltanto ad un punto di equilibrio.
+
+
+### Teorema
+Sia $g:R \to R$ di classe c', e sia $x^*$ un punto fisso di g. Allora:
+- $|g'(x^*)|<1 \Rightarrow x^*$ è punto di equilibrio asintoticamente stabile.
+- $|g'(x^*)|>1 \Rightarrow x^*$ è punto di equilibrio instabile.
+<u>Osservazione</u>: Nel caso $g(x)=ax+b$, $g'(x)=a$.
+per $|a|=1$ il teorema non dà informazioni
+
+> $g(x)=qx(1-x)$, $q \in (0,4]$
+> $\begin{cases} x_{n+1}=g(x_n) \\ x_0 \text{ assegnato in } (0, 1) \end{cases}$ 
+> Questo modello viene usato in dinamica delle popolazioni (mappa logistica). Per questo motivo, si considera $x \geq 0$, $g(x)=qx-qx^2$ è una famiglia di parabola passanti per (0,0) e (1,0).
+> Punti fissi di $g: x=g(x)$. 
+> $x=qx-qx^2$
+> $qx^2+x-qx=0$
+> $x(qx+1-q)=0$
+> $x_1=0$ e $x_2=\dfrac{q-1}{q} (\in (0,1) \forall q>1)$ sono i punti di equilibrio.
+> Consideriamo i casi in cui:
+> - $0<q<1$. Se si fa il grafico a ragnatela si vede che tutte le soluzioni con $x_0 \in (0,1)$ tendono a 0 per $n \to \infty$.
+> - $q \in (0,1) \Rightarrow$ il teorema ci conferma che 0 è punto di equilibrio asintoticamente stabile.
+> - $q>1$ Le soluzioni con dato iniziale in $(0,1)$ sembrano tendere a $x_2$ nel grafico a ragnatela, ma calcolando $g'(x_2)$ vediamo $x_2$ che è punto di equilibrio solo se $1<q<3$.
+> <u>Osservazione</u>: In questo caso specifico, abbiamo asintoticamente stabilità anche per $q=1$. Ma non possiamo usare il teorema.
+
+### Th. di esistenza degli zeri
+Sia $f:[a,b] \to R$ continua. Se $f(a)*f(b)<0$, allora $\exists c \in (a,b) \text{ tale che } f(c)=0$. 
+<u>Osservazione</u>: Se $f$ è continua e, negli estremi $a$ e $b$ ha segno opposto, allora $f(x)=0$ ha almeno una soluzione in $(a,b)$.
+<u>Osservazione</u>: $f(c)=0 \to c$ si dice zero di $f$.
+<u>Dimostrazione</u>: (metodo di bisezione). Supponiamo che $f(a)<0<f(b)$ per fissare le idee. Definiamo $c_1=\dfrac{a+b}{2}$, punto medio tra $a$ e $b$, e consideriamo $f(c_1)$.
+- $f(c_1)=0 \Rightarrow$ il teorema è dimostrato.
+- $f(c_1)>0$
+Allora poniamo $a_1=a$ e $b_1=c_1$
+- $f(c_1)<0$
+Allora poniamo $a_1=c_1$ e $b_1=b$
+In casi 2 e 3, abbiamo definito un nuovo intervallo $[a_1, v_1] \subset [a,b]$ tale che $f(a_1)<0<f(b_1)$, e $b_1-a_1=\dfrac{b-a}{2}$.
+(Su $[a_1, b_1]$, valgono le ipotesi del teorema, ma $[a_1,b_1] ma lunghezza pari a quella di $[a,b]$ diviso 2).
+Iteriamo e definiamo $c_2=\dfrac{a_1+b_1}{2}$, e consideriamo $f(c_2)<=\>.
+Nei casi 2 e 3 si definisce $[a_2,b_2] \subseteq [a_1,b_1]$ seguendo le stesse regole usate in precedenza. In questo modo, ci sono 2 possibilità: O in un numero finito di iterazioni, si giunge a un punto medio che è uno zero di $f$, o $\exists$ una successione di intervalli $[a_n,b_n]$ tale che:
+1) $[a,b] \supseteq [a_1,b_1] \supseteq [a_2,b_2]$...
+2) $b_n-a_n=\dfrac{b-a}{2^n}$
+3) $f(a_n)<0<f(b_n)$
+Da 1, possiamo dire che $a_{n+1} \geq a_n$ $\forall n$ e $b_{n+1} \leq b_n$ $\forall n$ $\Rightarrow$ $\{a_n\}$ e $\{b_n\}$ sono monotone, $a_n \to l_1 \in R$ e $b_n \to l_2 \in R$.
+Per il punto 2, $l_2-l_1=\lim\limits_{n \to \infty}{(b_n-a_n)}=\lim\limits_{n \to \infty} \dfrac{b-a}{2^n}=0 \Rightarrow l_2=l_1$.
+Poiché $f$ è continua $\lim\limits_{n \to \infty} f(a_n)=f(\lim\limits_{n\ to \infty}a_n)=f(l)$.
+Per il punto 3 e per la permanenza del segno $f(l)=\lim\limits_{n \to \infty} f(a_n) \leq 0$ e $f(l)=\lim\limits_{n \to \infty} f(b_n) \geq 0$ $\to f(l)=0$. E $l$ è $l_0$ o cercato.
+
+<u>Osservazione</u>:
+- L'ipotesi di continuità è essenziale.
+- Il teorema dà una condizione sufficiente, ma non necessaria.

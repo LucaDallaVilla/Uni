@@ -1,21 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
-struct charQueue {
-    int capacity;
-    char* a;
-};
-
-void func(struct charQueue *q) {
-    printf("%u\n", q->capacity);
-}
 
 int main(void) {
-    struct charQueue *queue;
-    queue = malloc(sizeof(struct charQueue));
-    queue->capacity = 8;
-    queue->a = "Luca";
-
-    func(queue);
+    for (int i=-50000000; i<INT_MAX; i-=100) {
+        printf("%d\n", i);
+    }
 }
 

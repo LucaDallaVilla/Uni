@@ -110,3 +110,49 @@ Infatti $\dfrac{P(n)}{a_0n^k}=\dfrac{a_0n^k(1+\dfrac{a_1n^{k-1}}{a_0n^k}+...+\df
 In conclusione, nello studio asintotico dei polinomi basta studiare i membri con grado massimo.
 <u>Osservazione</u>: I simboli di Landau si possono introdurre anche per le funzioni $f,g:[a,+\infty) \to R$, con $g(x) \neq 0$ definitivamente per $x \to \infty$.
 $f=0(g)$ se $\lim\limits_{x \to +\infty} \dfrac{f(x)}{g(x)}=0$.
+
+
+### Per ricorrenza
+Data una funzione $g:R \to R$, consideriamo una successione $\{x_n\}$ definita da: $(1)\begin{cases} x_0 \text{ assegnato} \\ x_{n+1}=g(x_n) \end{cases}$ $\forall n$.
+$x_{n+1}=g(x_n)$ è la relazione ricorsiva.
+
+> $\begin{cases} x_{n+1}=x_n^2-2 \\ x_0=\dfrac{1}{2} \end{cases}$  $g(x)=x^2-2$
+
+Cambiando $x_0$ cambia il comportamento di tutta la successione.
+<u>Osservazione</u>: Si possono considerare anche successioni definite per ricorrenza a due o più passi.
+
+> Fibonacci:
+> $\begin{cases} x_{n+2}=x_{n+1}+x_n \\ x_0=1, x_1=1 \end{cases}$
+
+La (1) su può vedere come modello matematico discreto (ambito naturali) per descrivere l'evoluzione di un sistema.
+$x_0$ è la condizione iniziale
+$g(x_n)$ è la legge che descrive l'evoluzione del sistema.
+$\{x_n\}$ si dice soluzione del sistema dinamico (SD).
+
+Per calcolare un valore per $n$ grande, possiamo usare la rappresentazione grafica.
+> $g(x)=x^2-2$
+![[Pasted image 20240409093244.png]]
+Bisogna quindi procedere con il grafico per ciascuna iterazione della successione.
+<u>Grafico a ragnatela</u>: Si prende $x_0$ sull'asse x, si traccia il segmento verticale fino a incontrare il punto di intersezione con g(x), $P=(x_0, g(x_0))$, si traccia un segmento orizzontale fino a incontrare l'intersezione con $y=x$ $P=(x_1, x_1)$ e infine si traccia un segmento verticale per individuare $x_1$ sull'asse x. E così via...
+
+Le intersezioni tra $y=x$ e $y=g(x)$ hanno un ruolo importante. Sia $x^* \in R$ tale che $x^*=g(x^*)$. Consideriamo ora $\begin{cases} x_{n+1}=g(x_n) \\ x_0=x^2 \end{cases}$.
+$x_n=x^*$ $\forall n$, quindi successione costante.
+- punto fisso di $g$ ($x^*=g(x^*)$)
+- punto di equilibrio per (SD)
+tali punti sono rilevanti anche nello studio delle altre soluzioni.
+
+[[Teoremi#Th. punto fisso di una successione]]
+
+In generale, non si riesce a descrivere completamente il comportamento del sistema (SD).
+In molti casi si riesce a dare informazioni locali vicino ai punti di equilibrio.
+Il concetto chiave è quello di stabilità.
+<u>Definizione</u>: Sia $x^*$ un punto di equilibrio di SD (=punto fisso di $g$, $x^*=g(x^*$)). Si dice che:
+- $x^*$ è un punto di equilibrio stabile se $\forall \epsilon>0 \exists \delta>0: |x_0-x^*|<\delta \Rightarrow |x_n-x^2|<\epsilon$ $\forall n \in N$. Ovvero, la soluzione $\{x_n\}$ rimane arbitrariamente vicina a $x^*$ purché sia sufficientemente vicina la condizione iniziale $x_0$.
+- $x^*$ è un punto di equilibrio asintoticamente stabile se è stabile e se $\exists \delta '>0 : |x_0-x^*|<\delta ' \Rightarrow \lim\limits_{n \to \infty} x_n=x_*$. Ovvero, se la condizione iniziale è abbastanza vicina a $x^*$, allora la soluzione tende a $x^*$.
+- $x^*$ è punto di equilibrio instabile se non è stabile.
+<u>Osservazione</u>: Nel caso lineare $g(x)=ax+b$ con $a \neq 1$, abbiamo visto che (SD) ha un unico equilibrio, dato da $x^*=\dfrac{b}{1-a}$. Avevamo visto che $x^*$ è:
+- asintoticamente stabili se |a|<1.
+- instabile se |a|>1.
+
+Nel caso generale vale il seguente risultato di stabilità/instabilità per linearizzazione.
+[[Teoremi#Teorema]]
