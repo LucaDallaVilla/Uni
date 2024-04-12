@@ -8,20 +8,19 @@ Viene definita programmazione "lineare" perché i calcoli prevedono solo somme a
 ### Modelli di Mix
 max z$=(1+r_0)x_0 + \sum\limits_{i=1}^{6}[(1+r_i)p_i]x_i$ 
 $x_0 + \sum\limits_{i=1}^{6}p_ix_i=500'000$
-$x_0\geq150'000$
+$x_0 \geq 150'000$
 $p_ix_i\leq100'000$ $\forall i=1,...,6$
 $p_5x_5+p_6x_6\leq\dfrac{20}{100}\sum\limits_{i=1}^{6}p_ix_i$ 
 $p_2x_2\geq\dfrac{10}{100}\sum\limits_{i=1}^{6}p_ix_i$
 $\sum\limits_{i=1}^{6}\delta_ip_ix_i \leq \dfrac{15}{100} \sum\limits_{i=1}^{6}p_ix_i$
 $x_0\geq0$
-$x_1,...,x_0 \in Z$ 
-
+$x_1,...,x_0 \in Z$
 ### Modelli di Copertura
 >Problema di assunzione nel motel
 >$x_i=$ numero di persone che montano in fascia $i$.
->min z$=\sum\limits_{i=1}^{6}z_i$ 
+>min z$=\sum\limits_{i=1}^{6}z_i$
 >1. $x_1+x_6\geq4$
->2. $x_1+x_2\geq8$ 
+>2. $x_1+x_2\geq8$
 >3. $x_2+x_4\geq10$
 >4. $x_3+x_4\geq7$
 >5. $x_4+x_5\geq12$
@@ -103,4 +102,4 @@ $\sum\limits_{j=1}^{n} x_{ij}=1$   $\forall i=1,2,...,n$
 $\sum\limits_{j=1}^{n} x_{ij}=1$   $\forall j=1,2,...,n$
 
 $y_i \geq \text{tempo di completamento} - \text{due date del j-esimo job}$
-$y_i \geq (\sum\limits_{k=1}^{j} \sum\limits_{i=1}^{n} p_i*x_{ik})-\sum\limits_{i=1}^{n} d_i*x_{ij}$    $\forall j=1,2,...,n$ 
+$y_i \geq (\sum\limits_{k=1}^{j} \sum\limits_{i=1}^{n} p_i*x_{ik})-\sum\limits_{i=1}^{n} d_i*x_{ij}$    $\forall j=1,2,...,n$
