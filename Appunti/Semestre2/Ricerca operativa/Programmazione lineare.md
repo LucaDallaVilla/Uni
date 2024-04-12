@@ -1,3 +1,10 @@
+Nasce in Gran Bretagna durante la Seconda Guerra Mondiale per ottimizzare il trasporto di risorse. Applica la matematica per risolvere modelli molto complessi al fine di minimizzare i costi e/o massimizzare i guadagni.
+### Problemi di ottimizzazione
+Nella maggior parte dei casi bisogna trovare una soluzione per massimizzare o minimizzare una variabile del modello, rispettando sempre i vincoli imposti. Chiameremo con $S_a$ la regione delle soluzioni ammissibili, cioè quelle che rispettano i vincoli.
+- $x_1, ..., x_n$: variabili di controllo su cui effettuare i calcoli.
+- $f(x_1, ..., x_n)$: funzione obiettivo.
+- $g_1(x_1, ..., x_n)$: vincoli.
+Viene definita programmazione "lineare" perché i calcoli prevedono solo somme algebriche e prodotti tra costanti e variabili -> $c_1 x_1 \pm c_2 x_2 \pm ... \pm c_n x_n$.
 ### Modelli di Mix
 max z$=(1+r_0)x_0 + \sum\limits_{i=1}^{6}[(1+r_i)p_i]x_i$ 
 $x_0 + \sum\limits_{i=1}^{6}p_ix_i=500'000$
