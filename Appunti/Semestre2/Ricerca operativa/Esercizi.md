@@ -41,3 +41,5 @@ $x_1, x_2 \geq 0$
 	$x_1=\dfrac{5}{2}-\dfrac{5}{4}x_3+\dfrac{1}{4}x_4$
 	$x_2=\dfrac{5}{2}+\dfrac{1}{4}x_3-\dfrac{1}{4}x_4$
 	$x_5=\dfrac{3}{2}+\dfrac{5}{4}x_3-\dfrac{1}{4}x_4$
+
+sos

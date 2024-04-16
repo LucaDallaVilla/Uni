@@ -224,8 +224,8 @@ Allora poniamo $a_1=a$ e $b_1=c_1$
 - $f(c_1)<0$
 Allora poniamo $a_1=c_1$ e $b_1=b$
 In casi 2 e 3, abbiamo definito un nuovo intervallo $[a_1, v_1] \subset [a,b]$ tale che $f(a_1)<0<f(b_1)$, e $b_1-a_1=\dfrac{b-a}{2}$.
-(Su $[a_1, b_1]$, valgono le ipotesi del teorema, ma $[a_1,b_1] ma lunghezza pari a quella di $[a,b]$ diviso 2).
-Iteriamo e definiamo $c_2=\dfrac{a_1+b_1}{2}$, e consideriamo $f(c_2)<=\>.
+(Su $[a_1, b_1]$, valgono le ipotesi del teorema, ma $[a_1,b_1]$ ma lunghezza pari a quella di $[a,b]$ diviso 2).
+Iteriamo e definiamo $c_2=\dfrac{a_1+b_1}{2}$, e consideriamo $f(c_2)$.
 Nei casi 2 e 3 si definisce $[a_2,b_2] \subseteq [a_1,b_1]$ seguendo le stesse regole usate in precedenza. In questo modo, ci sono 2 possibilità: O in un numero finito di iterazioni, si giunge a un punto medio che è uno zero di $f$, o $\exists$ una successione di intervalli $[a_n,b_n]$ tale che:
 1) $[a,b] \supseteq [a_1,b_1] \supseteq [a_2,b_2]$...
 2) $b_n-a_n=\dfrac{b-a}{2^n}$
@@ -238,3 +238,56 @@ Per il punto 3 e per la permanenza del segno $f(l)=\lim\limits_{n \to \infty} f(
 <u>Osservazione</u>:
 - L'ipotesi di continuità è essenziale.
 - Il teorema dà una condizione sufficiente, ma non necessaria.
+- La procedura di dimostrazione ci dà un algoritmo per ottenere un valore approssimato di uno zero di $f$. Nel caso peggiore, l'errore vale $b_n-a_n=\dfrac{b-a}{2^n}$, cioè l'ampiezza dell'intervallo considerato. La condizione per avere un valore con un errore massimo di $\epsilon$ è: $n>log_2{\left(\dfrac{b-a}{\epsilon}\right)}$.
+### Th. dei valori intermedi
+Si combina il [[Teoremi#Th. Weierstrass]] e [[Teoremi#Th. di esistenza degli zeri]].
+$f:[a,b] \to R$ continua, $[a,b]$ chiuso e limitato. Detti $m$ e $M$ il minimo e il massimo di $f$ su $[a,b]$, $\forall \lambda \in [m,M] \exists c_{\lambda} \in [a,b] \text{ tale che } f(c_{\lambda})=\lambda$.
+
+### Th. di esistenza degli zeri (2)
+$f:[a,b] \to R$ di classe $C^2$. Supponiamo che: 
+1. $f(a)*f(b) < 0$
+2. $f'$ e $f''$ non cambiano segno in $[a,b]$
+3. $f(a)*f''(a)>0$, oppure
+	3'. $f(b)*f''(b)>0.$
+
+Allora $\exists ! c \in (a,b)$ tale che $f(c)=0$ e la successione $\{x_n\}$ definita da
+$\begin{cases} x_0=a \\ x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)} \end{cases}$ se vale la 3.
+oppure:
+$\begin{cases} x_0=b \\ x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)} \end{cases}$ se vale la 3'.
+converge a $c$.
+
+<u>Osservazione</u>: L'ipotesi 2. dice che siamo in uno dei casi seguenti: $f$ è strettamente monotona e non cambia concavità.
+$f''(a)*f''(b)>0$. Quindi, ricordando che $f(a)*f(b)<0$, una tra 3. e 3'. vale sempre.
+
+<u>Dimostrazione</u>: Dall'esistenza degli zeri, già sappiamo che $\exists c \in (a,b) : f(c)=0$. $f$ è strettamente monotona per l'ipotesi 2. Quindi lo zero è unico.
+Dobbiamo mostrare che:
+1. $\{x_n\}$ è convergente 
+2. $\lim\limits_{n \to \infty} x_n=c$
+
+Dimostrazione 1.:
+Supponiamo $f(a)>0$ e $f''(a)>0$ (caso $f$ crescente e convessa).
+Definiamo la funzione $g(x)=x-\dfrac{f(x)}{f'(x)}$   $\forall x \in [a,b]$ e notiamo che:
+- $g(c)=c-\dfrac{f(c)}{f'(c)}=c$ perché $f(c)=0$ ($c$ è punto fisso di $g$).
+- $g$ è derivabile e $g'(x)=1-\dfrac{f'(x)*f'(x)-f(x)*f''(x)}{(f'(x))^2}=\dfrac{(f'(x))^2-(f'(x))^2+f(x)*f''(x)}{(f'(x))^2}=\dfrac{f(x)*f''(x)}{(f'(x))^2}>0$   $\forall x \in\ [a,c)$.
+Se $x \in [a,c), f(x)>0, f''(x)>0$
+$g$ è strettamente crescente in $[a,c)$.
+
+Dimostriamo che $x_n<x_{n+1}<c$   $\forall n$ $(*)$
+Se $n=0$, si ha $x_0=a$ e $x_1=x_0-\dfrac{f(x_0)}{f'(x_0)}=a-\dfrac{f(a)}{f'(a)}>a$
+Inoltre, $x_1=g(x_0)=g(a)<g(c)=c$
+Quindi $x_0<x_1<c \Rightarrow g(x_0)<g(x_1)<g(c)$, cioè $x_1<x_2<c$.
+Iterando per induzione, $(*)$ vale $\forall n$.
+$(*)$ ci dice che $\{x_n\}$ è crescente e limitata, $a \leq x_n < c$. Per l'esistenza del limite per successioni monotone, $\lim\limits_{n \to \infty} x_n=l \in R \cup \{+\infty\}$. Siccome $\{x_n\}$ è limitata, $l \in R$ e $\{x_n\}$ è convergente.
+
+Dimostrazione 2.:
+Dobbiamo mostrare che $l=c$. $x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)}$ passiamo al limite per $n \to \infty$. Siccome $f$ e $f'$ sono continue, otteniamo ($x_n \to l \Rightarrow x_{n+1} \to l$) $l=l-\dfrac{f(l)}{f'(l)}$.
+L'unica soluzione è $f(l)=0$ in quanto $f'(l) \neq 0$. Quindi $l=c$ per unicità.
+
+> $f(x)=e^x+x-3=0$
+> Usando il metodo delle tangenti in $[0,3]$ si ottiene un valore approssimato con un errore $<10^{-4}$ in sole 5 iterazioni. Quindi molto più efficienti.
+>Verifichiamo che le ipotesi del teorema siano soddisfatte.
+>$f \in C^2([0,3])$
+>$f'(x)=e^x+1>0$   $\forall x$
+>$f''(x)=e^x>0$    $\forall x$
+>$f(0)<0<f(3)$ in questo caso vale 3', $f(3)*f''(3)>0$ e $f(0)*f''(0)<0$
+>$\begin{cases} x_0=3 \\ x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)} \end{cases}$
