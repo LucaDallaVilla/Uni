@@ -5,16 +5,45 @@ Nella maggior parte dei casi bisogna trovare una soluzione per massimizzare o mi
 - $f(x_1, ..., x_n)$: funzione obiettivo.
 - $g_1(x_1, ..., x_n)$: vincoli.
 Viene definita programmazione "lineare" perché i calcoli prevedono solo somme algebriche e prodotti tra costanti e variabili -> $c_1 x_1 \pm c_2 x_2 \pm ... \pm c_n x_n$.
+
+Ci sono 3 diversi tipi di soluzione in tutti i problemi di ottimizzazione, in tutte le dimensioni:
+- soluzione finita
+- soluzione illimitata
+- nessuna soluzione (non c'è una regione di soluzioni ammissibili)
+
+
+
+
 ### Modelli di Mix
-max z$=(1+r_0)x_0 + \sum\limits_{i=1}^{6}[(1+r_i)p_i]x_i$ 
-$x_0 + \sum\limits_{i=1}^{6}p_ix_i=500'000$
-$x_0 \geq 150'000$
-$p_ix_i\leq100'000$ $\forall i=1,...,6$
-$p_5x_5+p_6x_6\leq\dfrac{20}{100}\sum\limits_{i=1}^{6}p_ix_i$ 
-$p_2x_2\geq\dfrac{10}{100}\sum\limits_{i=1}^{6}p_ix_i$
-$\sum\limits_{i=1}^{6}\delta_ip_ix_i \leq \dfrac{15}{100} \sum\limits_{i=1}^{6}p_ix_i$
-$x_0\geq0$
-$x_1,...,x_0 \in Z$
+Problema dello zaino
+1. Cioccolata
+2. Succhi
+3. Birra
+4. Panini
+5. Acqua
+6. Biscotti
+$x_1,...,x_6 \in Z$ rappresentano la quantità del prodotto che mettiamo nello zaino.
+I punti di soddisfazione sono di natura additiva.
+
+max z = $\sum\limits_{i=1}^n p_ix_i=10x_1+30x_2+6x_3+20x_4+20x_3+20x_4+8x_6$   (ciascun coefficiente corrisponde ai punti soddisfazione per ciascun prodotto)
+Soggetto ai vincoli:
+$\dfrac{1}{2}x_1+x_2+\dfrac{1}{3}x_3+\dfrac{1}{10}x_4+x_5+\dfrac{1}{2}x_6 \leq 10$ data la massima capienza dello zaino.
+$x_1 \geq 2$
+$x_2 \geq 2$
+$x_3 \geq 6$
+$x_4 \geq 10$
+$x_6 \geq 2$ sono le minime quantità da prendere per ciascun prodotto.
+
+Le nostre variabili sono:
+- $i$: item
+- $p$: profitto
+- $w$: peso
+- $W$: capacità dello zaino
+
+<u>Soluzione fallace</u>: possiamo provare a dividere $\dfrac{\text{profitto}}{\text{ingombro}}$ per ciascun prodotto e vedere quale ha il miglior rendimento.
+Vediamo così che i panini hanno l miglior rendimento con un valore di 200, ma questo procedimento non è del tutto preciso a causa della natura intera delle variabili.
+Non esiste una soluzioni universalmente accettata, si tratta di uno dei 7 problemi del millennio per cui ci sono 1 milione di dollari come premio.
+
 ### Modelli di Copertura
 >Problema di assunzione nel motel
 >$x_i=$ numero di persone che montano in fascia $i$.
@@ -52,6 +81,8 @@ min z$=0,02\sum\limits_{i=1}^{3}\sum\limits_{j=1}^{4} d_{ij}x_{ij}=0,02[20x_{11}
 - $s_3=x_{13}+x_{23}+x_{33}\geq50'000$
 - $s_4=x_{14}+x_{24}+x_{34}\geq75'000$
 $x_{ij}\in Z_+ \space \forall i,j \in N$
+
+
 
 ### Modelli multi-periodo
 
