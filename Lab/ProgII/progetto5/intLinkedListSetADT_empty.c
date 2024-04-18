@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdbool.h>
-
 #include "intSetADT.h"
 #include "intLinkedListSet.h"
 
