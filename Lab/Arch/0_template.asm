@@ -10,24 +10,21 @@ _start:
 la t0, size
 lw t0, 0(t0)
 la t1, array
-lw t2, 0(t1) # valore massimo trovato
-li t3, 1 # i
+li t2, 0 # risultato
 
 loop:
-bge t3, t0, exit
-lw t4, 0(t1)
-bgt t4, t2, sum
-a:
-addi t3, t3, 1
+ble t0, zero, exit
+lw t3, 0(t1)
+andi t3, t3, 1
+beqz t3, pari
+addi t2, t2, 1
+pari:
 addi t1, t1, 4
+addi t0, t0, -1
 j loop
 
-sum:
-add t2, zero, t4
-j a
-    
 exit:
-la t5, result
-sw t2, 0(t5)
+la t4, result
+sw t2, 0(t4)
 addi a7, zero, 10
 ecall
