@@ -1,30 +1,33 @@
 .globl _start
 
 .data
-size:   .word 2
-array:  .word -12, 2
-result: .word -1
+    size:   .word  8                  # size of the array        
+    array:  .dword 1,2,3,4,5,6,7,8    # array of long integers
+    result: .word  -1                 # store the result
+    
 .text
 
 _start:
 la t0, size
 lw t0, 0(t0)
 la t1, array
-li t2, 0 # risultato
+la t2, result
+
+addi t0, t0, -1
 
 loop:
-ble t0, zero, exit
-lw t3, 0(t1)
-andi t3, t3, 1
-beqz t3, pari
-addi t2, t2, 1
-pari:
-addi t1, t1, 4
+blez t0, end_loop_1
+ld t3, 0(t1)
+ld t4, 8(t1)
+bgt t3, t4, end_loop_0
 addi t0, t0, -1
+addi t1, t1, 8
 j loop
 
-exit:
-la t4, result
-sw t2, 0(t4)
-addi a7, zero, 10
-ecall
+end_loop_1:
+li t5, 1
+sw t5, 0(t2)
+
+end_loop_0:
+li t5, 0
+sw t5, 0(t2)
