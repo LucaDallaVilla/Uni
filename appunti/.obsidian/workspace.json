@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "5d3e04ff5aef4511",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7c443f71cf0483a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b075eb7b8b5f5801",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f840a32a5a4abd2c",
+    "type": "split",
+    "children": [
+      {
+        "id": "39153140bd7e1a9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "21139e6bda35a89b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTimeReverse"
+              }
+            }
+          },
+          {
+            "id": "dce799bca2bdeefa",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bfc599e7d099e946",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 333.5
+  },
+  "right": {
+    "id": "4dbacaf24ecd4812",
+    "type": "split",
+    "children": [
+      {
+        "id": "9aaa973751d9043c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a5f20801a6f7bda3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ba959f3967272b41",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "faf6ca47dcb69203",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d1c8241e7e4676e7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 273.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "audio-recorder:Avvia/ferma registrazione": false,
+      "obsidian-importer:Open Importer": false,
+      "remotely-save:Remotely Save": false
+    }
+  },
+  "active": "b075eb7b8b5f5801",
+  "lastOpenFiles": [
+    "media/Pasted image 20240508111330.png",
+    "Semestre2/Ricerca operativa/Esercizi.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
+    "Semestre2/Architettura degli Elaboratori/logica-digitale-analisi-sintesi-reti-sequenziali.pdf",
+    "Semestre2/Architettura degli Elaboratori/logica-digitale-sequenziale.pdf",
+    "Semestre2/Architettura degli Elaboratori/assemblatore-linker-loader.pdf",
+    "Semestre2/Architettura degli Elaboratori/logica-digitale-combinatoria.pdf",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Funzioni composte.md",
+    "Semestre2/Analisi I/Risoluzione appr. di equazioni.md",
+    "Semestre2/Analisi I/Derivate.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Derivate.md",
+    "media/Pasted image 20240503093617.png",
+    "media/Pasted image 20240503092457.png",
+    "Semestre2/Analisi I/Approssimazione lineare.md",
+    "Semestre2/Analisi I/Calcolo differenziale.md",
+    "media/Pasted image 20240430112112.png",
+    "Semestre2/Analisi I/Teoremi.md",
+    "Semestre2/Analisi I/Integrali.md",
+    "Semestre2/Analisi I/Serie.md",
+    "media/Pasted image 20240419094612.png",
+    "media/Pasted image 20240419092443.png",
+    "Semestre2/Ricerca operativa/Programmazione lineare.md",
+    "media/Pasted image 20240416100203.png",
+    "media/Pasted image 20240416095159.png",
+    "media/Pasted image 20240416093652.png",
+    "Semestre2/Architettura degli Elaboratori/RISC-V.md",
+    "Semestre2/Analisi I/Successioni numeriche.md",
+    "Semestre2/Programmazione II/Lista collegata.md",
+    "Semestre2/Architettura degli Elaboratori/isa-risc-v.pdf",
+    "Semestre2/Ricerca operativa/Algoritmo del simplesso.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Analisi di funzione.md",
+    "media/Pasted image 20240412103957.png",
+    "media/Pasted image 20240412101913.png",
+    "Semestre2/Analisi I/Complessità algoritmo.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Trasformazioni grafici.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Funzioni.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
+    "Semestre2/Analisi I/Funzioni continue.md",
+    "Semestre2/Analisi I/Limiti.md",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Posizione e velocità.md",
+    "Senza nome",
+    "Semestre2/Programmazione II/Correttezza di un programma.md",
+    "Derivate",
+    "Test",
+    "Semestre1/Onenote.desktop",
+    "Semestre1"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "remotely-save:start-sync": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "S"
+    }
+  ]
+}
