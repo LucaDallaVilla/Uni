@@ -2,7 +2,7 @@
 
 .data        
     array: .word 1,2,3,4,5,4,3,2,1
-	size:  .word 9
+    size:  .word 9
         
 .text
 
@@ -38,33 +38,32 @@ equal:
 	addi a0, zero, 0
 	jr ra
 	
+	
 palindrome:
-    addi sp, sp, -20
-    sd ra, 0(sp)
-    sw t0, 8(sp)
-    sw t1, 12(sp)
-    sw t2, 16(sp)
-    
+	addi sp, sp, -24
+	sd ra, 0(sp)
+	sd a0, 8(sp)
+	sd a1, 16(sp)
+
     li t0, 0 # i
-    addi t1, a1, -1 # size-1
+    addi t1, a1, -1 # j
     li t2, 1 # result
     
     while:
-        bge t0, t1, endwhile
-        add a1, t0, zero
-        add a2, t1, zero
-        jal ra, equal
-        and t2, t2, a0
-        addi t0, t0, 1
-        addi t1, t1, -1
-        j while
+    	bge t0, t1, endwhile
+		add a1, t0, zero
+		add a2, t1, zero
+    	jal ra, equal
+    	and t2, t2, a0
+    	addi t0, t0, 1
+    	addi t1, t1, -1
+    	j while
     endwhile:
-        add a0, t2, zero
-        
-        ld ra, 0(sp)
-        lw t0, 8(sp)
-        lw t1, 12(sp)
-        lw t2, 16(sp)
-        addi sp, sp, 20
-        jr ra
-	
+		ld ra, 0(sp)
+		ld a0, 8(sp)
+		ld a1, 16(sp)
+		addi sp, sp, 24
+		add a0, t2, zero
+		jr ra
+    
+    
