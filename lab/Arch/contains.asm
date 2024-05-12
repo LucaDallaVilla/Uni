@@ -29,10 +29,9 @@ contains:
 		
 		
 passrules:
-	addi sp, sp, -16
-	
+	addi sp, sp, -8
 	sd ra, 0(sp)
-	sd a0, 8(sp)
+	add s2, a0, zero
 	
 	add a0, s2, zero
 	li a1, 65
@@ -50,7 +49,6 @@ passrules:
 	ld ra, 0(sp)
 	addi sp, sp, 8
 	jr ra
-	
 	
 	
 	

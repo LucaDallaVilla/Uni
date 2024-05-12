@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
+                "file": "Semestre2/Analisi I/Serie.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
+                "file": "Semestre2/Analisi I/Serie.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
+                "file": "Semestre2/Analisi I/Serie.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md"
+                "file": "Semestre2/Analisi I/Serie.md"
               }
             }
           }
@@ -151,11 +151,13 @@
   },
   "active": "b075eb7b8b5f5801",
   "lastOpenFiles": [
+    "Semestre2/Architettura degli Elaboratori/datapath.pdf",
+    "Semestre2/Architettura degli Elaboratori/uc.pdf",
+    "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
     "media/Pasted image 20240510092359.png",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
     "media/Pasted image 20240508111330.png",
     "Semestre2/Ricerca operativa/Esercizi.md",
-    "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
     "Semestre2/Architettura degli Elaboratori/logica-digitale-analisi-sintesi-reti-sequenziali.pdf",
     "Semestre2/Architettura degli Elaboratori/logica-digitale-sequenziale.pdf",
     "Semestre2/Architettura degli Elaboratori/assemblatore-linker-loader.pdf",
@@ -184,7 +186,6 @@
     "Semestre2/Architettura degli Elaboratori/isa-risc-v.pdf",
     "Semestre2/Ricerca operativa/Algoritmo del simplesso.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Analisi di funzione.md",
-    "media/Pasted image 20240412103957.png",
     "Semestre2/Analisi I/Complessità algoritmo.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Trasformazioni grafici.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Funzioni.md",
@@ -195,7 +196,6 @@
     "Semestre2/Programmazione II/Correttezza di un programma.md",
     "Derivate",
     "Test",
-    "Semestre1/Onenote.desktop",
-    "Semestre1"
+    "Semestre1/Onenote.desktop"
   ]
 }
