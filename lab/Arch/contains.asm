@@ -29,26 +29,27 @@ contains:
 		
 		
 passrules:
-	addi sp, sp, -8
-	sd ra, 0(sp)
-	add s2, a0, zero
-	
-	add a0, s2, zero
-	li a1, 65
-	li a2, 90
-	jal ra, contains
-	add s0, a0, zero
-	
-	add a0, s2, zero
-	li a1, 48
-	li a2, 57
-	jal ra, contains
-	add s1, a0, zero
-	
-	and a0, s0, s1
-	ld ra, 0(sp)
-	addi sp, sp, 8
-	jr ra
+    addi sp, sp, -4
+    sw ra, 0(sp)
+    add s0, a0, zero
+    
+    add a0, s0, zero
+    li a1, 65
+    li a2, 90
+    jal ra, contains
+    add s1, a0, zero
+    
+    add a0, s0, zero
+    li a1, 48
+    li a2, 57
+    jal ra, contains
+    add s2, a0, zero
+    
+    and a0, s1, s2
+    lw ra, 0(sp)
+    addi sp, sp, 4
+    
+    jr ra
 	
 	
 	

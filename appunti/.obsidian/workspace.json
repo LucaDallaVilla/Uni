@@ -11,11 +11,9 @@
             "id": "b075eb7b8b5f5801",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Semestre2/Analisi I/Serie.md",
-                "mode": "source",
-                "source": false
+                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf"
               }
             }
           }
@@ -69,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 333.5
+    "width": 337.5
   },
   "right": {
     "id": "4dbacaf24ecd4812",
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Semestre2/Analisi I/Serie.md",
+                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Semestre2/Analisi I/Serie.md",
+                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Semestre2/Analisi I/Serie.md"
+                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf"
               }
             }
           }
@@ -151,6 +149,8 @@
   },
   "active": "b075eb7b8b5f5801",
   "lastOpenFiles": [
+    "Semestre2/Analisi I/Derivate.md",
+    "Semestre2/Analisi I/Serie.md",
     "Semestre2/Architettura degli Elaboratori/datapath.pdf",
     "Semestre2/Architettura degli Elaboratori/uc.pdf",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
@@ -164,7 +164,6 @@
     "Semestre2/Architettura degli Elaboratori/logica-digitale-combinatoria.pdf",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Funzioni composte.md",
     "Semestre2/Analisi I/Risoluzione appr. di equazioni.md",
-    "Semestre2/Analisi I/Derivate.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Derivate.md",
     "media/Pasted image 20240503093617.png",
     "media/Pasted image 20240503092457.png",
@@ -173,7 +172,6 @@
     "media/Pasted image 20240430112112.png",
     "Semestre2/Analisi I/Teoremi.md",
     "Semestre2/Analisi I/Integrali.md",
-    "Semestre2/Analisi I/Serie.md",
     "media/Pasted image 20240419094612.png",
     "media/Pasted image 20240419092443.png",
     "Semestre2/Ricerca operativa/Programmazione lineare.md",
@@ -195,7 +193,6 @@
     "Senza nome",
     "Semestre2/Programmazione II/Correttezza di un programma.md",
     "Derivate",
-    "Test",
-    "Semestre1/Onenote.desktop"
+    "Test"
   ]
 }
