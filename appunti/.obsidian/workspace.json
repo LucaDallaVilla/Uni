@@ -67,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 337.5
+    "width": 258.5
   },
   "right": {
     "id": "4dbacaf24ecd4812",
@@ -132,22 +132,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 273.5
+    "width": 243.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
       "obsidian-importer:Open Importer": false,
-      "remotely-save:Remotely Save": false,
-      "switcher:Apri selezione rapida": false,
-      "graph:Apri vista grafo": false,
-      "canvas:Crea nuova lavagna": false,
-      "daily-notes:Apri nota del giorno": false,
-      "templates:Inserisci modello": false,
-      "command-palette:Apri riquadro comandi": false,
-      "audio-recorder:Avvia/ferma registrazione": false
+      "remotely-save:Remotely Save": false
     }
   },
-  "active": "b075eb7b8b5f5801",
+  "active": "21139e6bda35a89b",
   "lastOpenFiles": [
     "Semestre2/Analisi I/Derivate.md",
     "Semestre2/Analisi I/Serie.md",

@@ -151,50 +151,129 @@ _Bool sset_extract(SortedSetADTptr ss, void**ptr) { // toglie e restituisce un e
 
 // controlla se due insiemi sono uguali
 int sset_equals(const SortedSetADT* s1, const SortedSetADT* s2) { 
-    return -1;
+    if (!s1 || !s2) return -1;
+    if (s1->size != s2->size) return 0;
+
+    for (ListNodePtr node = s1->first; node; node = node->next) {
+        if (!sset_member(s2, node->elem)) return 0;
+    }
+
+    return 1;
 }
 
 // controlla se il primo insieme e' incluso nel secondo
 int sset_subseteq(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return -1;
+    if (!s1 || !s2) return -1;
+
+    for (ListNodePtr node1 = s1->first; node1; node1 = node1->next) {
+        if (!sset_member(s2, node1->elem)) return 0;
+    }
+
+    return 1;
 }
 
 // controlla se il primo insieme e' incluso strettamente nel secondo
 int sset_subset(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return -1;
-} 
+    if (!s1 || !s2) return -1;
+
+    return sset_subseteq && s1->size != s2->size;
+}
 
 // restituisce la sottrazione primo insieme meno il secondo, NULL se errore
 SortedSetADTptr sset_subtraction(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return NULL;   
-} 
+    if (!s1 || !s2) return -1;
+
+    SortedSetADTptr s3 = (SortedSetADTptr) malloc(sizeof(SortedSetADT));
+    if (!s3) return NULL;
+
+    for (ListNodePtr node1 = s1->first; node1; node1 = node1->next) {
+        if (!sset_member(s2, node1->elem)) {
+            sset_add(s3, node1->elem);
+        }
+    }
+
+    return s3;
+}
 
 // restituisce l'unione di due insiemi, NULL se errore
 SortedSetADTptr sset_union(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return NULL; 
-} 
+    if (!s1 || !s2) return NULL;
+    SortedSetADTptr s3 = (SortedSetADTptr) malloc(sizeof(SortedSetADT));
+    if (!s3) return NULL;
+
+    for (ListNodePtr node = s1->first; node; node = node->next) {
+        sset_add(s3, node->elem);
+    }
+
+    for (ListNodePtr node = s2->first; node; node = node->next) {
+        if (!sset_member(s3, node->elem)) sset_add(s3, node->elem);
+    }
+
+    return s3;
+}
 
 // restituisce l'intersezione di due insiemi, NULL se errore
 SortedSetADTptr sset_intersection(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return NULL;
+    if (!s1 || !s2) return NULL;
+
+    ListNodePtr node1 = s1->first;
+    ListNodePtr node2 = s2->first;
+    SortedSetADTptr s3 = (SortedSetADTptr) malloc(sizeof(SortedSetADT));
+
+    while(node1 && node2) {
+        if (sset_member(s2, node1->elem)) sset_add(s3, node1->elem);
+        if (sset_member(s1, node2->elem)) sset_add(s3, node2->elem);
+        node1 = node1->next;
+        node2 = node2->next;
+    }
+
+    return s3;
 }
 
-// restituisce il primo elemento 
+// restituisce l'elemento minimo
 _Bool sset_min(const SortedSetADT* ss, void**ptr) {
-    return false;
+    if (!ss || sset_size(ss) == 0) return false;
+
+    int min = ss->first->elem;
+    for (ListNodePtr node = ss->first->next; node; node = node->next) {
+        if (node->elem < min) {
+            min = node->elem;
+        }
+    }
+
+    **ptr = min;
+    return true;
 }
 
-// restituisce l'ultimo elemento 
+// restituisce l'elemento massimo
 _Bool sset_max(const SortedSetADT* ss, void**ptr) {
+    if (!ss || sset_size(ss) == 0) return false;
+
+    int max = ss->first->elem;
+    for (ListNodePtr node = ss->first->next; node; node = node->next) {
+        if (node->elem > max) {
+            max = node->elem;
+        }
+    }
+
+    **ptr = max;
+    return true;
+}
+
+// toglie e restituisce l'elemento minimo
+_Bool sset_extractMin(SortedSetADTptr ss, void**ptr) {
+    if (sset_min(ss, ptr)) {
+        sset_remove(ss, **ptr);
+        return true;
+    }
     return false;
 }
 
-// toglie e restituisce il primo elemento 
-_Bool sset_extractMin(SortedSetADTptr ss, void**ptr) {
-    return false;    
-}
-
-// toglie e restituisce l'ultimo elemento (0 se lista vuota, -1 se errore, 1 se restituisce elemento)
+// toglie e restituisce l'elemento massimo (0 se lista vuota, -1 se errore, 1 se restituisce elemento)
 _Bool sset_extractMax(SortedSetADTptr ss, void**ptr) {
-    return false;       
+    if (sset_max(ss, ptr)) {
+        sset_remove(ss, **ptr);
+        return true;
+    }
+    return false;     
 }
