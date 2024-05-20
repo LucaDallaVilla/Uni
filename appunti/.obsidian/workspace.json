@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c7c443f71cf0483a",
+        "id": "522755504da523e7",
         "type": "tabs",
         "children": [
           {
-            "id": "b075eb7b8b5f5801",
+            "id": "0382394bdcf4443d",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -83,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -100,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -122,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Semestre2/Architettura degli Elaboratori/uc.pdf"
-              }
+              "state": {}
             }
           }
         ],
@@ -147,12 +141,14 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "21139e6bda35a89b",
+  "active": "0382394bdcf4443d",
   "lastOpenFiles": [
+    "Semestre2/Architettura degli Elaboratori/cache-gerarchia.pdf",
+    "Semestre2/Architettura degli Elaboratori/bus.pdf",
+    "Semestre2/Architettura degli Elaboratori/uc.pdf",
     "Semestre2/Analisi I/Derivate.md",
     "Semestre2/Analisi I/Serie.md",
     "Semestre2/Architettura degli Elaboratori/datapath.pdf",
-    "Semestre2/Architettura degli Elaboratori/uc.pdf",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
     "media/Pasted image 20240510092359.png",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
@@ -192,7 +188,6 @@
     "Semestre2/Analisi I/Esercit&Tutoraggio/Posizione e velocità.md",
     "Senza nome",
     "Semestre2/Programmazione II/Correttezza di un programma.md",
-    "Derivate",
-    "Test"
+    "Derivate"
   ]
 }

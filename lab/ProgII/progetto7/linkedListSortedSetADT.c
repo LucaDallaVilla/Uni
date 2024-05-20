@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <time.h>
 
 #include "sortedSetADT.h"
 
@@ -18,17 +19,20 @@ struct sortedSetADT {
     int size; /* Numero di elementi presenti nell'insieme */
 };
 
+void stampaint(void* elem) {
+    printf("%d ",(*(int*)elem));
+}
+
 // for debug: stampa un insieme
 void stampaSet(SortedSetADTptr ss, void (*stampaelem)(void*)) {
     ListNodePtr cur;
     if(!ss) printf("Insieme non esiste\n");
-    else if(sset_size(ss) == 0) printf("Insieme vuoto\n");
+    else if (sset_size(ss) == 0) printf("Insieme vuoto\n");
     else {
         printf("Insieme: (size %d) ",ss->size);
         for(cur = ss->first; cur; cur=cur->next) (*stampaelem)(cur->elem);
-        printf("\n");
     }
-}    
+}
 
 // restituisce un insieme vuoto impostando funzione di confronto, NULL se errore
 SortedSetADTptr mkSSet(int (*compare)(void*, void*)) {
@@ -48,7 +52,7 @@ SortedSetADTptr mkSSet(int (*compare)(void*, void*)) {
 _Bool dsSSet(SortedSetADTptr* ssptr) {
     if (ssptr && *ssptr) {
         free(*ssptr);
-        ssptr = NULL;
+        *ssptr = NULL;
         return true;
     }
     ssptr = NULL;
@@ -58,54 +62,58 @@ _Bool dsSSet(SortedSetADTptr* ssptr) {
 
 // aggiunge un elemento all'insieme 
 _Bool sset_add(SortedSetADTptr ss, void* elem) { 
-    if (ss) {
-        if (sset_member(ss, elem)) return false;
-        if (!ss->first) { // caso in cui ss è vuota 
-            ListNodePtr newNode = (ListNodePtr) malloc(sizeof(ListNode));
-            if (newNode) {
-                newNode->elem = elem;
-                newNode->next = NULL;
-                ss->first = newNode;
-                ss->last = newNode;
+    if (!ss) return false;
+    if (sset_member(ss, elem)) return false;
 
-                return true;
+    ListNodePtr newNode = (ListNodePtr) malloc(sizeof(ListNode));
+    if (!newNode) return false;
+    newNode->elem = elem;
+    if (!ss->first) {
+        newNode->next = NULL;
+        ss->first = newNode;
+        ss->last = newNode;
+    } else {
+        if (ss->compare(elem, ss->first->elem) == -1) { // controllo se elem è da inserire nella prima posizione
+            newNode->next = ss->first;
+            ss->first = newNode;
+        } else if (ss->compare(elem, ss->last->elem) == 1) { // controllo se elem è da inserire nell'ultima posizione
+            ss->last->next = newNode;
+            newNode->next = NULL;
+            ss->last = newNode;
+        } else { // elem è da inserire in mezzo al set
+            ListNodePtr node = ss->first;
+            while (node) {
+                if (ss->compare(elem, node->next->elem) == -1) break;
+                node = node->next;
             }
-
-            return false;
-        } else {
-            ListNodePtr precNode = ss->first;
-            ListNodePtr node = ss->first->next;
-            for (; node; node = node->next) {
-                if (node->elem > elem && precNode->elem < elem) break;
-                precNode = precNode->next;
-            }
-
-            ListNodePtr newNode = (ListNodePtr) malloc(sizeof(ListNode));
-            if (newNode) {
-                newNode->elem = elem;
-                newNode->next = node;
-                precNode->next = newNode;
-                ss->compare = NULL;
-            }
-
-            return false;
+            newNode->next = node->next;
+            node->next = newNode;
         }
-
-        ss->size++;
     }
-}  
+    ss->size++;
+    return true;
+}
 
 // toglie un elemento all'insieme 
 _Bool sset_remove(SortedSetADTptr ss, void* elem) {
-    if (ss) {
-        ListNodePtr precNode = ss->first;
-        for (ListNodePtr node = ss->first->next; node; node=node->next) {
-            if (node->elem == elem) {
-                precNode->next = node->next;
-                free(node);
-                ss->size--;
-                return true;
-            }
+    if (!ss) return false;
+    if (!ss->first) return false; // insieme vuoto
+
+    if (ss->first->elem == elem) { // primo elemento da rimuovere
+        ListNodePtr temp = ss->first->next;
+        free(ss->first);
+        ss->first = temp;
+        ss->size--;
+        return true;
+    }
+
+    ListNodePtr precNode = ss->first;
+    for (ListNodePtr node = ss->first->next; node; node=node->next) {
+        if (node->elem == elem) {
+            precNode->next = node->next;
+            free(node);
+            ss->size--;
+            return true;
         }
     }
     return false;
@@ -117,8 +125,9 @@ int sset_member(const SortedSetADT* ss, void* elem) {
         for (ListNodePtr node = ss->first; node; node=node->next) {
             if (node->elem == elem) return 1;
         }
+        return 0;
     }
-    return 0;
+    return -1;
 }
     
 // controlla se l'insieme e' vuoto    
@@ -206,7 +215,8 @@ SortedSetADTptr sset_union(const SortedSetADT* s1, const SortedSetADT* s2) {
     }
 
     for (ListNodePtr node = s2->first; node; node = node->next) {
-        if (!sset_member(s3, node->elem)) sset_add(s3, node->elem);
+        if (!sset_member(s3, node->elem))
+            sset_add(s3, node->elem);
     }
 
     return s3;
@@ -234,14 +244,14 @@ SortedSetADTptr sset_intersection(const SortedSetADT* s1, const SortedSetADT* s2
 _Bool sset_min(const SortedSetADT* ss, void**ptr) {
     if (!ss || sset_size(ss) == 0) return false;
 
-    int min = ss->first->elem;
+    void* min = ss->first->elem;
     for (ListNodePtr node = ss->first->next; node; node = node->next) {
-        if (node->elem < min) {
+        if (ss->compare(node->elem, min)) {
             min = node->elem;
         }
     }
 
-    **ptr = min;
+    *ptr = min;
     return true;
 }
 
@@ -256,14 +266,14 @@ _Bool sset_max(const SortedSetADT* ss, void**ptr) {
         }
     }
 
-    **ptr = max;
+    *ptr = max;
     return true;
 }
 
 // toglie e restituisce l'elemento minimo
 _Bool sset_extractMin(SortedSetADTptr ss, void**ptr) {
     if (sset_min(ss, ptr)) {
-        sset_remove(ss, **ptr);
+        sset_remove(ss, *ptr);
         return true;
     }
     return false;
@@ -272,7 +282,7 @@ _Bool sset_extractMin(SortedSetADTptr ss, void**ptr) {
 // toglie e restituisce l'elemento massimo (0 se lista vuota, -1 se errore, 1 se restituisce elemento)
 _Bool sset_extractMax(SortedSetADTptr ss, void**ptr) {
     if (sset_max(ss, ptr)) {
-        sset_remove(ss, **ptr);
+        sset_remove(ss, *ptr);
         return true;
     }
     return false;     

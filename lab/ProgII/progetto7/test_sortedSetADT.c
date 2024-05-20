@@ -33,7 +33,6 @@ SortedSetADTptr mkSSetvi(int count, ...) {
 }
 
 int main(int argc, char *argv[]) {
-    
     SortedSetADTptr set, s1, s2;
     int n_[] = {0,1,2,3,4,5,6,7,8,9}; 
     int check; 
@@ -45,6 +44,7 @@ int main(int argc, char *argv[]) {
     puts("BEGIN TEST of SortedSetADT"); 
     puts("*** first part: operations on a single set");
     
+    /*
     printf("\nCreating set\n");
     set = mkSSet(&compareint);
     stampaSet(set,&stampaint);
@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
     dsSSet(&set);
     stampaSet(set,&stampaint);
 
-    /* second part: set operations */
+    second part: set operations
     puts("\n\n*** second part: operations on set pairs");
     
     
@@ -210,4 +210,11 @@ int main(int argc, char *argv[]) {
     dsSSet(&s2);
 
     return 0;
+    */
+
+   SortedSetADTptr s1 = mkSSetvi(3, &n_[3], &n_[5], &n_[7]);
+   SortedSetADTptr s2 = mkSSetvi(0);
+   SortedSetADTptr s3 = sset_union(s1, s2);
+
+   stampaSet(s3, stampaint);
 }
