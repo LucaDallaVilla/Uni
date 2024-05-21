@@ -260,29 +260,61 @@ int sset_subset(const SortedSetADT* s1, const SortedSetADT* s2) {
 SortedSetADTptr sset_subtraction_rec(const SortedSetADT* s1, const SortedSetADT* s2, SortedSetADT* s3, TreeNodePtr node) {
 	if (!node) return s3;
 
+	sset_subtraction_rec(s1, s2, s3, node->left);
+	sset_subtraction_rec(s1, s2, s3, node->right);
+
 	if (!sset_member(s2, node->elem)) {
 		sset_add(s3, node->elem);
 	}
-
-	sset_subtraction_rec(s1, s2, s3, node->left);
-	sset_subtraction_rec(s1, s2, s3, node->right);
 }
 
 // restituisce la sottrazione primo insieme meno il secondo, NULL se errore
 SortedSetADTptr sset_subtraction(const SortedSetADT* s1, const SortedSetADT* s2) {
 	if (!s1 || !s2) return NULL;
 	SortedSetADTptr s3 = mkSSet(s1->compare);
+	if (!s3) return NULL;
 	return sset_subtraction_rec(s1, s2, s3, s1->root);
 } 
 
 // restituisce l'unione di due insiemi, NULL se errore
 SortedSetADTptr sset_union(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return NULL; 
+    SortedSetADTptr s3 = mkSSet(s1->compare);
+
+	for (TreeNodePtr node = s1->root; node; node = node->left) 
+		sset_add(s3, node->elem);
+
+	for (TreeNodePtr node = s1->root; node; node = node->right) 
+		sset_add(s3, node->elem);
+
+	for (TreeNodePtr node = s2->root; node; node = node->left) 
+		sset_add(s3, node->elem);
+
+	for (TreeNodePtr node = s2->root; node; node = node->right) 
+		sset_add(s3, node->elem);
+
+	return s3;
 } 
+
+SortedSetADTptr sset_intersection_rec(const SortedSetADT* s1, const SortedSetADTptr* s2, SortedSetADTptr s3, TreeNodePtr node) {
+	if (!node) return NULL;
+
+	sset_intersection_rec(s1, s2, s3, node->left);
+	sset_intersection_rec(s1, s2, s3, node->right);
+
+	if (sset_member(s2, node->elem)) 
+		sset_add(s3, node->elem);
+}
 
 // restituisce l'intersezione di due insiemi, NULL se errore
 SortedSetADTptr sset_intersection(const SortedSetADT* s1, const SortedSetADT* s2) {
-    return NULL;
+    if (!s1 || !s2) return NULL;
+	SortedSetADTptr s3 = mkSSet(s1->compare);
+	if (!s3) return NULL;
+
+	sset_intersection_rec(s1, s2, s3, s1->root);
+	sset_intersection_rec(s2, s1, s3, s2->root);
+
+	return s3;
 }
 
 // restituisce il primo elemento 

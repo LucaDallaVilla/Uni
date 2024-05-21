@@ -54,15 +54,7 @@ In buona approssimazione: $\displaystyle\int\limits_{a}^{b} v(t)dt \simeq s(b)-s
 $\dfrac{1}{b-a}\displaystyle\int_{a}^{b}v(t)dt = \dfrac{s(b)-s(a)}{b-a}$ è il valore medio della velocità in un intervallo $[a,b]$.
 
 $s(b)-s(a)=\displaystyle\int_{a}^{b} v(t)dt$ è un caso particolare del th. Torricelli-Barrow, il quale dice:
-### Primo teorema fondamentale del calcolo integrale
-se F è una primitiva di f, allora $\displaystyle\int_{a}^{b} f(x)dx=F(b)-F(a)$.
-<u>Osservazione</u>: il calcolo di integrali definiti è ricondotto a quello di integrali indefiniti e viceversa.
-Si può scrivere, più in generale, $F(x)=F(a)+\displaystyle\int_{a}^{x} f(t)dt \space \forall x \in [a,b]$ ed è definita come "funzione integrale" o "funzione di accumulazione".
-$F(a)$ è una costante, mentre $F(x)$ varia in funzione di x.
-
-### Secondo teorema fondamentale del calcolo integrale
-<u>Definizione</u>: Sia $f:[a,b] \to R$ una funzione  e sia $G(x)=\displaystyle\int_{a}^{x}f(t)dt$, allora G è derivabile e $G'(x)=f(x)$, cioè $G$ è una primitiva di $f$.
-
+[[Teoremi#Primo teorema fondamentale del calcolo integrale]]
 ### Proprietà
 - <u>Linearità</u>: se $f$ e $g$ sono integrabili in $[a,b]$ e $\alpha$ e $\beta \in R$, allora $\alpha f+\beta g$ è integrabile su $[a,b]$ e $\displaystyle\int_{a}^{b} \left(\alpha f(x)+\beta g(x)\right)dx=\alpha \int\limits_{a}^{b} f(x)dx+\beta \int\limits_{a}^{b} g(x) dx$.
 - <u>Additività rispetto al dominio</u>: se $f$ è integrabile su $[a,b]$ e $c \in (a,b)$, allora $f$ è integrabile su $[a,c]$ e su $[c,b]$, e $\displaystyle\int_{a}^{b} f=\int\limits_{a}^{c} f + \int\limits_{c}^{b} f$.

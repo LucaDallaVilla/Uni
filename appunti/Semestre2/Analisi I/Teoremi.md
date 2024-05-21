@@ -1,7 +1,7 @@
 ### Th. permanenza del segno (1)
 $c,l \in \bar R, \space f:I(c)\backslash \{c\} \to R$
 supponiamo che esista $\lim\limits_{x \to c} f(x)=l$.
-1. Se $l>0 \space (o \space l=+\infty) \Rightarrow f(x)>0 \space x \to c$ 
+1. Se $l>0 \space (o \space l=+\infty) \Rightarrow f(x)>0 \space x \to c$
 2. Se $l<0 \space (o \space l=-\infty) \Rightarrow f(x)<0 \space x \to c$
 In altre parole, $f(x)$ calcolata nell'intorno di $c$ mantiene lo stesso segno di $l$.
 
@@ -302,4 +302,18 @@ $m(b-a) \leq \displaystyle\int_{a}^{b} f(x) dx \leq M(b-a) \Rightarrow m \leq \d
 Sia $f$ di classe $C^2$ su $[a,b]$. $f$ derivabile 2 volte e $f''$ continua. Allora, posto $K:=max (x \in [a,b])$  $|f''(x)|$, abbiamo $\left|\displaystyle\int_{a}^{b} f-\sum\limits_{i=1}^{n} \dfrac{b-a}{b} f(\dfrac{x_{i-1}+x_i}{2})\right| \leq \dfrac{K}{24}*\dfrac{(b-a)^3}{n^2}$.
 
 ### Th. di Torricelli-Barrow (o di valutazione)
-Sia $f:[a,b] \to R$ continua e sia $F$ una primitiva di $f$ su $[a,b]$. Allora $\displaystyle\int_{a}^{b} f(x)dx=F(b)-F(a)=F(x)|_{a}^{b}=[F(x)]_a^{b}$ varie notazioni. 
+Se $F$ è una primitiva di $f$, allora $\int\displaystyle_a^b{f(x)dx} = F(b)-F(a)$ per il [[Teoremi#Primo teorema fondamentale del calcolo integrale]].
+Ora scriviamo $f(b)=F(a)+\int\displaystyle_a^b{f(x)dx}$
+Usando la variabile $x$ al posto di $b$, abbiamo: $F(x)=F(a)+\int\displaystyle_a^x{f(t)dt}$  $\forall x \in [a,b]$
+In particolare, la funzione $\int\displaystyle_a^x{f(t)dt}$  $\forall x \in [a,b]$ si dice funzione integrale di $f$, o funzione di accumulazione di $f$.
+<u>Osservazione</u>: La funzione integrale è una primitiva in quanto si ottiene dalla sottrazione di 2 primitive.
+<u>Osservazione</u>: Il calcolo di integrali definiti è ricondotto a quello di integrali indefiniti, e viceversa.
+
+### Primo teorema fondamentale del calcolo integrale
+se F è una primitiva di f, allora $\displaystyle\int_{a}^{b} f(x)dx=F(b)-F(a)$.
+<u>Osservazione</u>: il calcolo di integrali definiti è ricondotto a quello di integrali indefiniti e viceversa.
+Si può scrivere, più in generale, $F(x)=F(a)+\displaystyle\int_{a}^{x} f(t)dt \space \forall x \in [a,b]$ ed è definita come "funzione integrale" o "funzione di accumulazione".
+$F(a)$ è una costante, mentre $F(x)$ varia in funzione di x.
+
+### Secondo teorema fondamentale del calcolo integrale
+<u>Definizione</u>: Sia $f:[a,b] \to R$ una funzione  e sia $G(x)=\displaystyle\int_{a}^{x}f(t)dt$, allora G è derivabile e $G'(x)=f(x)$, cioè $G$ è una primitiva di $f$.

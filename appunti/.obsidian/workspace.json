@@ -4,6 +4,22 @@
     "type": "split",
     "children": [
       {
+        "id": "f7103b2897762a20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b56305c8f847af91",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Semestre2/Analisi I/Appunti prof/28_02.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "522755504da523e7",
         "type": "tabs",
         "children": [
@@ -11,8 +27,12 @@
             "id": "0382394bdcf4443d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Semestre2/Analisi I/Teoremi.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +85,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 258.5
+    "width": 258.5,
+    "collapsed": true
   },
   "right": {
     "id": "4dbacaf24ecd4812",
@@ -81,6 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Semestre2/Analisi I/Teoremi.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -97,6 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Semestre2/Analisi I/Teoremi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -118,7 +141,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Semestre2/Analisi I/Teoremi.md"
+              }
             }
           }
         ],
@@ -126,7 +151,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -143,21 +169,25 @@
   },
   "active": "0382394bdcf4443d",
   "lastOpenFiles": [
-    "Semestre2/Architettura degli Elaboratori/cache-gerarchia.pdf",
-    "Semestre2/Architettura degli Elaboratori/bus.pdf",
-    "Semestre2/Architettura degli Elaboratori/uc.pdf",
+    "Semestre2/Analisi I/Appunti prof/28_02.pdf",
+    "Semestre2/Analisi I/Teoremi.md",
+    "Semestre2/Analisi I/Integrali.md",
+    "Semestre2/Analisi I/Appunti prof/27_02.pdf",
+    "Semestre2/Analisi I/Appunti prof/21_02.pdf",
+    "Semestre2/Analisi I/Appunti prof/20_02.pdf",
+    "Semestre2/Analisi I/Appunti prof/20_03.pdf",
+    "Semestre2/Analisi I/Appunti prof/30_04.pdf",
+    "Semestre2/Analisi I/Appunti prof/27_03.pdf",
+    "Semestre2/Analisi I/Appunti prof/26_03.pdf",
+    "Semestre2/Analisi I/Appunti prof/24_04.pdf",
+    "Semestre2/Analisi I/Appunti prof/23_04.pdf",
     "Semestre2/Analisi I/Derivate.md",
     "Semestre2/Analisi I/Serie.md",
-    "Semestre2/Architettura degli Elaboratori/datapath.pdf",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Polinomi di Taylor.md",
     "media/Pasted image 20240510092359.png",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Integrali.md",
     "media/Pasted image 20240508111330.png",
     "Semestre2/Ricerca operativa/Esercizi.md",
-    "Semestre2/Architettura degli Elaboratori/logica-digitale-analisi-sintesi-reti-sequenziali.pdf",
-    "Semestre2/Architettura degli Elaboratori/logica-digitale-sequenziale.pdf",
-    "Semestre2/Architettura degli Elaboratori/assemblatore-linker-loader.pdf",
-    "Semestre2/Architettura degli Elaboratori/logica-digitale-combinatoria.pdf",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Funzioni composte.md",
     "Semestre2/Analisi I/Risoluzione appr. di equazioni.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Derivate.md",
@@ -166,8 +196,6 @@
     "Semestre2/Analisi I/Approssimazione lineare.md",
     "Semestre2/Analisi I/Calcolo differenziale.md",
     "media/Pasted image 20240430112112.png",
-    "Semestre2/Analisi I/Teoremi.md",
-    "Semestre2/Analisi I/Integrali.md",
     "media/Pasted image 20240419094612.png",
     "media/Pasted image 20240419092443.png",
     "Semestre2/Ricerca operativa/Programmazione lineare.md",
@@ -177,7 +205,6 @@
     "Semestre2/Architettura degli Elaboratori/RISC-V.md",
     "Semestre2/Analisi I/Successioni numeriche.md",
     "Semestre2/Programmazione II/Lista collegata.md",
-    "Semestre2/Architettura degli Elaboratori/isa-risc-v.pdf",
     "Semestre2/Ricerca operativa/Algoritmo del simplesso.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Analisi di funzione.md",
     "Semestre2/Analisi I/Complessità algoritmo.md",
@@ -186,8 +213,6 @@
     "Semestre2/Analisi I/Funzioni continue.md",
     "Semestre2/Analisi I/Limiti.md",
     "Semestre2/Analisi I/Esercit&Tutoraggio/Posizione e velocità.md",
-    "Senza nome",
-    "Semestre2/Programmazione II/Correttezza di un programma.md",
-    "Derivate"
+    "Semestre2/Programmazione II/Correttezza di un programma.md"
   ]
 }
