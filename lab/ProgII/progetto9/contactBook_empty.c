@@ -9,7 +9,21 @@
  Un tipo di dato per una rubrica di contatti
 */
 struct contactBookADT {
-    SortedSetADTptr contacts; // Tutto quello che serve è già in questa struttura
+    SortedSetADTptr contacts; // Puntatore al primo contatto
+};
+
+struct sortedSetADT {
+    ContactPtr root; /* Punta alla radice dell'albero, se l'insieme e' vuoto vale NULL */
+    int (*compare)(void*, void*); /* confronto tra due elementi: -1,0,1 se primo precede, uguale o segue il secondo */
+    int size; /* Numero di elementi presenti nell'insieme */
+};
+
+struct contact {
+    
+   char* name; 
+   char* surname;
+   char* mobile;
+   char* url;
 };
 
 void stampaContact(void* elem) {
@@ -21,49 +35,70 @@ int contact_cmp(void* c1, void* c2) {
     return cmpContact((ContactPtr)c1, (ContactPtr)c2);
 }
 
+_Bool strcmp(char* str1, char* str2) {
+    size_t i = 0;
+    for (; str1[i] && str2[i]; ++i) {
+        if (str1[i] != str2[i]) return false;
+    }
+    return str1[i] == str2[i] // controlla se entrambe le stringhe hanno il terminatore "\0" nella stessa posizione
+}
+
 // restituisce una rubrica vuota, NULL se errore
 ContactBookADTptr mkCBook() {
-    ContactBookADTptr newContactBook = (ContactBookADTptr) malloc(sizeof(ContactBookADT));
+    ContactBookADTptr newBook = (ContactBookADTptr) malloc(sizeof(ContactBookADT));
 
-    if (newContactBook) {
-        newContactBook->contacts = NULL;
+    if (newBook) {
+        newBook->first = NULL;
+        newBook->size = 0;
     }
 
-    return newContactBook;
+    return newBook;
 }
 
 // distrugge la rubrica, recuperando la memoria, false se errore
 _Bool dsCBook(ContactBookADTptr* book) {
-    if (!book) return false;
+    if (!book || !(*book)) return false;
 
-    if (*book) {
-        free(*book);
-        *book = NULL;
-        return true;
-    }
-    return false;
+    free(*book);
+    book = NULL;
+    return true;
 }
 
 // controlla se la rubrica e' vuota, -1 se NULL
 int isEmptyCBook(const ContactBookADT* book) {
     if (!book) return -1;
-
-    return book->contacts->size;
+    return book->size == 0;
 }
 
 // restituisce il numero di contatti presenti nella rubrica, -1 se NULL
 int cbook_size(const ContactBookADT* book) {
-    return -1;
+    if (!book) return -1;
+    return book->size;
 }
 
 // aggiunge un contatto alla rubrica (restituisce false se l'elemento era gia' presente, true altrimenti)
 _Bool cbook_add(ContactBookADTptr book, ContactPtr cnt) {
-    return false;
+    if (!book) return false;
+    if (cbook_search(book, cnt->name, cnt->surname)) return false;
+
+    SortedSetADTptr set = book->first;
+    while (set->nextContact)
+        set = set->nextContact;
+
+    set->nextContact = cnt;
+    return true;
 }
 
 // toglie un elemento all'insieme (restituisce false se l'elemento non era presente, true altrimenti)
 _Bool cbook_remove(ContactBookADTptr book, char* name, char* surname) {
-    return false;
+    if (!book || !book->first) return false;
+    ContactPtr prevContact = book->first->contact;
+    ContactPtr contact = book->first->nextContact;
+    while (contact) {
+        if (strcmp(contact->name, name) && strcmp(contact->surname, surname)) {
+
+        }
+    }
 }
 
 // restituisce un puntatore al contatto con dato nome e cognome (può essere usata per accedere o modificare il numero e url del contatto), NULL se non presente

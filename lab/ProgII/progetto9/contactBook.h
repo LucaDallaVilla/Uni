@@ -7,6 +7,7 @@
  Un tipo di dato per una rubrica di contatti
 */
 typedef struct contactBookADT ContactBookADT, *ContactBookADTptr;
+typedef struct treeNode TreeNode, *TreeNodePtr;
 
 /**
  NOTA:
