@@ -1,3 +1,6 @@
+#include <stdbool.h>
+#include <stdio.h>
+
 #include "contactOpq.h"
 
 #ifndef GUARD_ContactBookADT
@@ -6,8 +9,8 @@
 /** 
  Un tipo di dato per una rubrica di contatti
 */
+typedef struct contact Contact, *ContactPtr;
 typedef struct contactBookADT ContactBookADT, *ContactBookADTptr;
-typedef struct treeNode TreeNode, *TreeNodePtr;
 
 /**
  NOTA:

@@ -1,12 +1,6 @@
 #ifndef contact_h
 #define contact_h
 
-struct contact {
-   char* name; 
-   char* surname;
-   char* mobile;
-   char* url;
-};
 
 typedef struct contact Contact, *ContactPtr;
 /**

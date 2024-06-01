@@ -4,6 +4,7 @@
 /** 
  Un tipo di dato per gli insiemi ordinati generici 
 */
+typedef struct treeNode TreeNode, *TreeNodePtr;
 typedef struct sortedSetADT SortedSetADT, *SortedSetADTptr;
 
 /**
